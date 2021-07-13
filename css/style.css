@@ -114,10 +114,16 @@ h2.title {
   border-color: #f55c4a;
 }
 .home_image1 {
-  padding-bottom: 20px;
+  height: 50%;
 }
 .home_image {
   position: relative;
+}
+.home_image_2 {
+  height: 100%;
+}
+.home_image img {
+  height: 100%;
 }
 .home_image_text {
   position: absolute;
@@ -138,10 +144,6 @@ h2.title {
   color: #fff;
   border-color: rgb(71, 165, 222);
 }
-.home_image3,
-.home_image4 {
-  margin-top: 20px;
-}
 main {
   padding: 110px 0 0;
 }
@@ -149,6 +151,7 @@ main {
 .inner_banner_inr {
   background: #47a5de;
   position: relative;
+  height: 100%;
 }
 .inner_banner .row {
   align-items: stretch;
@@ -210,14 +213,14 @@ main {
   border-bottom: 2px solid #47a5de;
 }
 
-.shop_product_detail button {
+button.add_cart_btn {
   color: #fff;
   background-color: #fdc902;
   border-radius: 50px;
   font-weight: bold;
   width: 100%;
 }
-.shop_product_detail button:hover {
+button.add_cart_btn:hover {
   background-color: rgba(253, 201, 2, 0.6);
   color: #fff;
 }
@@ -244,4 +247,46 @@ main {
 }
 .shop {
   padding: 60px 0 80px;
+}
+
+.modals {
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.close_modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: url("../image/cancel.png");
+  width: 24px;
+  height: 24px;
+}
+.hidden {
+  display: none;
+}
+.modal_content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  width: 80%;
+  padding: 50px;
+}
+.modal_content h3,
+.modal_content h5 {
+  color: #575757;
+}
+.modal_number {
+  width: 50px;
+}
+.modal_label {
+  color: #575757;
+  display: block;
 }

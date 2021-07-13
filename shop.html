@@ -63,8 +63,12 @@
       <section class="inner_banner">
         <div class="container">
           <div class="row">
-            <div class="col-4 inner_banner_inr">
-              <h2 class="text-uppercase text-light">Shop</h2>
+            <div class="col-4">
+              <div class="inner_banner_inr">
+                <h2 class="text-uppercase text-light display-5 fw-bold">
+                  Shop
+                </h2>
+              </div>
             </div>
             <div class="col-8">
               <img src="image/shop.webp" alt="contact" />
@@ -75,42 +79,200 @@
       <section class="shop">
         <div class="container">
           <div class="row">
-            <div class="col-xl-4 col-md-4 col-sm-6 pt-4">
+            <div class="col-xl-4 col-md-4 col-sm-6 pt-4 open_modal">
               <div class="shop_product">
                 <a href="#." class="text-decoration-none">
                   <div class="shop_product_img position-relative">
                     <img src="image/product1.webp" alt="product" />
                     <div class="shop_product_img_hover">
                       <img src="image/product1_hover.webp" alt="product" />
-                      <div class="shop_product_view text-center py-2">
+                      <div
+                        class="shop_product_view text-center py-2 show_modal"
+                      >
                         <p class="mb-0">Quick View</p>
+                      </div>
+                      <div class="modals hidden">
+                        <div class="modal_content">
+                          <div class="close_modal"></div>
+                          <div class="row">
+                            <div class="col-7">
+                              <div
+                                id="carouselExampleIndicators"
+                                class="carousel slide"
+                                data-bs-ride="carousel"
+                              >
+                                <div class="carousel-indicators">
+                                  <button
+                                    type="button"
+                                    data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="0"
+                                    class="active"
+                                    aria-current="true"
+                                    aria-label="Slide 1"
+                                  ></button>
+                                  <button
+                                    type="button"
+                                    data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="1"
+                                    aria-label="Slide 2"
+                                  ></button>
+                                </div>
+                                <div class="carousel-inner">
+                                  <div
+                                    class="carousel-item active"
+                                    data-bs-interval="1000"
+                                  >
+                                    <img
+                                      src="image/product1.webp"
+                                      class="d-block w-100"
+                                      alt="product"
+                                    />
+                                  </div>
+                                  <div
+                                    class="carousel-item"
+                                    data-bs-interval="1000"
+                                  >
+                                    <img
+                                      src="image/product1_hover.webp"
+                                      class="d-block w-100"
+                                      alt="product"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-5">
+                              <h3 class="fw-bold mb-3">Classic Abacus</h3>
+                              <h5 class="mb-4">Rs.2000</h5>
+                              <label for="quantity" class="modal_label mb-2"
+                                >Quantity</label
+                              >
+                              <input
+                                type="number"
+                                name="number"
+                                min="1"
+                                max="10"
+                                value="1"
+                                class="modal_number"
+                                id="quantity"
+                              />
+                              <button
+                                type="button"
+                                class="btn mt-5 add_cart_btn"
+                              >
+                                Add to cart
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="shop_product_detail text-center mt-3">
                     <h5 class="my-2 text-dark">Wooden Car</h5>
                     <h6 class="text-secondary">Rs.2000</h6>
-                    <button type="button" class="btn mt-3">Add to cart</button>
+                    <button type="button" class="btn mt-3 add_cart_btn">
+                      Add to cart
+                    </button>
                   </div>
                 </a>
               </div>
             </div>
-            <div class="col-xl-4 col-md-4 col-sm-6 pt-4">
+            <div class="col-xl-4 col-md-4 col-sm-6 pt-4 open_modal">
               <div class="shop_product">
                 <a href="#." class="text-decoration-none">
                   <div class="shop_product_img position-relative">
                     <img src="image/product2.webp" alt="product" />
                     <div class="shop_product_img_hover">
                       <img src="image/product2_hover.webp" alt="product" />
-                      <div class="shop_product_view text-center py-2">
+                      <div
+                        class="shop_product_view text-center py-2 show_modal"
+                      >
                         <p class="mb-0">Quick View</p>
+                      </div>
+                      <div class="modals hidden">
+                        <div class="modal_content">
+                          <div class="close_modal"></div>
+                          <div class="row">
+                            <div class="col-7">
+                              <div
+                                id="carouselExampleIndicator1"
+                                class="carousel slide"
+                                data-bs-ride="carousel"
+                              >
+                                <div class="carousel-indicators">
+                                  <button
+                                    type="button"
+                                    data-bs-target="#carouselExampleIndicator1"
+                                    data-bs-slide-to="0"
+                                    class="active"
+                                    aria-current="true"
+                                    aria-label="Slide 1"
+                                  ></button>
+                                  <button
+                                    type="button"
+                                    data-bs-target="#carouselExampleIndicator1"
+                                    data-bs-slide-to="1"
+                                    aria-label="Slide 2"
+                                  ></button>
+                                </div>
+                                <div class="carousel-inner">
+                                  <div
+                                    class="carousel-item active"
+                                    data-bs-interval="1000"
+                                  >
+                                    <img
+                                      src="image/product2.webp"
+                                      class="d-block w-100"
+                                      alt="product"
+                                    />
+                                  </div>
+                                  <div
+                                    class="carousel-item"
+                                    data-bs-interval="1000"
+                                  >
+                                    <img
+                                      src="image/product2_hover.webp"
+                                      class="d-block w-100"
+                                      alt="product"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-5">
+                              <h3 class="fw-bold mb-3">Classic Abacus</h3>
+                              <h5 class="mb-4">Rs.2000</h5>
+                              <label for="quantity" class="modal_label mb-2"
+                                >Quantity</label
+                              >
+                              <input
+                                type="number"
+                                name="number"
+                                min="1"
+                                max="10"
+                                value="1"
+                                class="modal_number"
+                                id="quantity"
+                              />
+                              <button
+                                type="button"
+                                class="btn mt-5 add_cart_btn"
+                              >
+                                Add to cart
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="shop_product_detail text-center mt-3">
                     <h5 class="my-2 text-dark">Wooden Car</h5>
                     <h6 class="text-secondary">Rs.2000</h6>
-                    <button type="button" class="btn mt-3">Add to cart</button>
+                    <button type="button" class="btn mt-3 add_cart_btn">
+                      Add to cart
+                    </button>
                   </div>
                 </a>
               </div>
@@ -130,7 +292,9 @@
                   <div class="shop_product_detail text-center mt-3">
                     <h5 class="my-2 text-dark">Wooden Car</h5>
                     <h6 class="text-secondary">Rs.2000</h6>
-                    <button type="button" class="btn mt-3">Add to cart</button>
+                    <button type="button" class="btn mt-3 add_cart_btn">
+                      Add to cart
+                    </button>
                   </div>
                 </a>
               </div>
@@ -150,7 +314,9 @@
                   <div class="shop_product_detail text-center mt-3">
                     <h5 class="my-2 text-dark">Wooden Car</h5>
                     <h6 class="text-secondary">Rs.2000</h6>
-                    <button type="button" class="btn mt-3">Add to cart</button>
+                    <button type="button" class="btn mt-3 add_cart_btn">
+                      Add to cart
+                    </button>
                   </div>
                 </a>
               </div>
@@ -170,7 +336,9 @@
                   <div class="shop_product_detail text-center mt-3">
                     <h5 class="my-2 text-dark">Wooden Car</h5>
                     <h6 class="text-secondary">Rs.2000</h6>
-                    <button type="button" class="btn mt-3">Add to cart</button>
+                    <button type="button" class="btn mt-3 add_cart_btn">
+                      Add to cart
+                    </button>
                   </div>
                 </a>
               </div>
@@ -273,5 +441,6 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
