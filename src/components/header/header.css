@@ -1,0 +1,29 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-size: 20px;
+  letter-spacing: 3.5px;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+  color: rgb(71, 165, 222) !important;
+}
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #f55c4a !important;
+}
+.navbar-brand {
+  font-size: 26px;
+  letter-spacing: 12.5px;
+}
+.navbar-brand span {
+  display: inline-block;
+}
+.navbar-brand span.logo_f_letter {
+  color: rgb(71, 165, 222);
+}
+.navbar-brand span.logo_s_letter {
+  color: #f55c4a;
+}
