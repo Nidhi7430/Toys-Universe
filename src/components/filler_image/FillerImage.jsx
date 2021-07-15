@@ -1,26 +1,30 @@
-import React from 'react'
+import React from "react";
 
-import home1 from '../../images/home1.webp'
+import home1 from "../../images/home1.webp";
+import "./filler_image.css";
 
 const FillerImage = (props) => {
-    return (
+  return (
     <>
-       <div 
-        class="card border-0 rounded-0 bg-dark"  
-        // style={{height: '50%'}}
-       >
-        <img class="card-img img-fluid" src={props.image || home1} 
-        style={{height: '100%', width: '100%'}}  
-        alt="Card" />
-        <div class="card-img-overlay">
-            <h1 class="card-title">{props.cardTitle}</h1>
-            {(props.buttonText) ? (
-            <a href class="btn btn-outline-info rounded-pill">{props.buttonText}</a>
-            ) : (<></>)}
+      <div className="card border-0 rounded-0 bg-dark h-100">
+        <img
+          className="card-img img-fluid rounded-0 w-100 h-100"
+          src={props.image || home1}
+          alt="Card"
+        />
+        <div className="card-img-overlay rounded-0">
+          <h1 className="card-title">{props.cardTitle}</h1>
+          {props.buttonText ? (
+            <a href="true" className="btn btn-outline-info rounded-pill">
+              {props.buttonText}
+            </a>
+          ) : (
+            <></>
+          )}
         </div>
-        </div>
+      </div>
     </>
-    )
-}
+  );
+};
 
-export default FillerImage
+export default FillerImage;
