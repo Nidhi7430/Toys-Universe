@@ -20,7 +20,7 @@ const Home = () => {
             <div className="col-8">
               <Slider />
             </div>
-            <div className="col-4 d-flex flex-column justify-content-between">
+            <div className="col-4 d-flex flex-column">
               <FillerImage
                 cardTitle="About the Toys Universe"
                 buttonText="Our Story"

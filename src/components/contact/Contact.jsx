@@ -11,58 +11,48 @@ import {
 
 const Contact = () => {
   const [formValue, setFormValue] = useState({
-    fname: "Mark",
-    lname: "Otto",
+    fname: "",
+    lname: "",
     email: "",
     city: "",
     state: "",
     zip: "",
   });
 
-  const onChange = (e: any) => {
+  const onChange = (e) => {
     setFormValue({ ...formValue, [e.target.name]: e.target.value });
+    console.log(e.target.name);
   };
   return (
     <>
       <InnerBanner image={contact} title="Contact" />
       <MDBContainer>
         <MDBValidation className="row g-3" noValidate>
-          <div className="col-md-4">
+          <div className="col-md-6">
             <MDBInput
               value={formValue.fname}
               name="fname"
               onChange={onChange}
-              id="validationCustom01"
+              id="validationFirstName"
               required
-              label="First name"
-              validation="Looks good!"
+              label="First Name"
+              validation="Please provide a First Name."
+              invalid
+              type="text"
             />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-6">
             <MDBInput
               value={formValue.lname}
               name="lname"
               onChange={onChange}
-              id="validationCustom02"
+              id="validationLastName"
               required
-              label="Last name"
-              validation="Looks good!"
+              label="Last Name"
+              validation="Please provide a Last Name."
+              invalid
+              type="text"
             />
-          </div>
-          <div className="col-md-4">
-            <div className="input-group has-validation">
-              <span className="input-group-text" id="inputGroupPrepend">
-                @
-              </span>
-              <input
-                type="text"
-                className="form-control"
-                id="validationCustomUsername"
-                placeholder="Username"
-                required
-              />
-              <div className="invalid-feedback">Please choose a username.</div>
-            </div>
           </div>
           <div className="col-md-6">
             <MDBInput
@@ -73,18 +63,6 @@ const Contact = () => {
               required
               label="City"
               validation="Please provide a valid city."
-              invalid
-            />
-          </div>
-          <div className="col-md-6">
-            <MDBInput
-              value={formValue.zip}
-              name="zip"
-              onChange={onChange}
-              id="validationCustom05"
-              required
-              label="Zip"
-              validation="Please provide a valid zip."
               invalid
             />
           </div>

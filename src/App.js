@@ -1,5 +1,10 @@
 import Header from "./components/header/Header";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Shop from "./components/shop/Shop";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
@@ -25,6 +30,9 @@ function App() {
             </Route>
             <Route exact path="/Contact">
               <Contact />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/Home" />
             </Route>
           </Switch>
         </div>
