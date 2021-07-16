@@ -7,25 +7,47 @@ import {
   MDBCarouselItem,
   MDBCarouselElement,
   MDBCarouselCaption,
+  MDBTypography,
 } from "mdb-react-ui-kit";
+import "./slider.css";
 
 const Slider = () => {
   return (
-    <MDBCarousel showControls fade>
+    <MDBCarousel showControls fade className="show_control_icon">
       <MDBCarouselInner>
         <MDBCarouselItem itemId={0}>
           <MDBCarouselElement src={slider1} alt="..." />
-          <MDBCarouselCaption>
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <MDBCarouselCaption className="slider_caption">
+            <MDBTypography
+              tag="div"
+              className="display-2 text-uppercase text-dark fw-bold mb-2"
+            >
+              Hope On Board
+            </MDBTypography>
+            <MDBTypography className="lead text-dark">
+              With Our New Train Collection
+            </MDBTypography>
+            <a href="\Shop" className="btn btn-outline-info rounded-pill">
+              Shop Now
+            </a>
           </MDBCarouselCaption>
         </MDBCarouselItem>
 
         <MDBCarouselItem itemId={1}>
           <MDBCarouselElement src={slider2} alt="..." />
-          <MDBCarouselCaption>
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <MDBCarouselCaption className="slider_caption">
+            <MDBTypography
+              tag="div"
+              className="display-2 text-uppercase text-dark fw-bold mb-2"
+            >
+              Watch them grow
+            </MDBTypography>
+            <MDBTypography className="lead text-dark">
+              With Our New Train Collection
+            </MDBTypography>
+            <a href="\Shop" className="btn btn-outline-info rounded-pill">
+              Shop Now
+            </a>
           </MDBCarouselCaption>
         </MDBCarouselItem>
       </MDBCarouselInner>

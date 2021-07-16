@@ -9,7 +9,7 @@ import {
   MDBIcon,
   MDBCollapse,
 } from "mdb-react-ui-kit";
-// import { Link } from "react-router-dom";
+import "./header.css";
 
 const Header = () => {
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
@@ -17,8 +17,11 @@ const Header = () => {
   return (
     <MDBNavbar expand="lg" light bgColor="light" fixed="top">
       <MDBContainer>
-        <MDBNavbarBrand href="#">
-          <h3 className="fw-bold">Toy Universe</h3>
+        <MDBNavbarBrand href="\Home">
+          <h3 className="fw-bold logo">
+            <span className="logo_f_letter">T</span>oy
+            <span className="logo_s_letter">U</span>niverse
+          </h3>
         </MDBNavbarBrand>
         <MDBNavbarToggler
           aria-expanded="false"

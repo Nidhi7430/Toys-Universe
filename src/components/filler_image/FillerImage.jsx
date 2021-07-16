@@ -15,7 +15,7 @@ const FillerImage = (props) => {
         <div className="card-img-overlay rounded-0">
           <h1 className="card-title">{props.cardTitle}</h1>
           {props.buttonText ? (
-            <a href="true" className="btn btn-outline-info rounded-pill">
+            <a href="\About" className="btn btn-outline-info rounded-pill">
               {props.buttonText}
             </a>
           ) : (

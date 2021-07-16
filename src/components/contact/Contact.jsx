@@ -1,84 +1,50 @@
-import React, { useState } from "react";
+import React from "react";
 import InnerBanner from "../inner_banner/InnerBanner";
 import contact from "../../images/contact.webp";
 import {
-  MDBValidation,
   MDBInput,
-  MDBBtn,
-  MDBCheckbox,
   MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBBtn,
+  MDBTypography,
 } from "mdb-react-ui-kit";
 
 const Contact = () => {
-  const [formValue, setFormValue] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    city: "",
-    state: "",
-    zip: "",
-  });
-
-  const onChange = (e) => {
-    setFormValue({ ...formValue, [e.target.name]: e.target.value });
-    console.log(e.target.name);
-  };
   return (
     <>
       <InnerBanner image={contact} title="Contact" />
-      <MDBContainer>
-        <MDBValidation className="row g-3" noValidate>
-          <div className="col-md-6">
-            <MDBInput
-              value={formValue.fname}
-              name="fname"
-              onChange={onChange}
-              id="validationFirstName"
-              required
-              label="First Name"
-              validation="Please provide a First Name."
-              invalid
-              type="text"
+      <MDBContainer className="w-50 py-5 my-3">
+        <MDBTypography
+          tag="div"
+          className="display-5 pb-5 text-info text-uppercase fw-bold text-center"
+        >
+          Contact Us
+        </MDBTypography>
+        <MDBRow className=" square border border-2 rounded-3 border-info p-4">
+          <MDBCol size="6" className="py-3">
+            <MDBInput label="First Name" id="typeText" type="text" />
+          </MDBCol>
+          <MDBCol size="6" className="py-3">
+            <MDBInput label="Last Name" id="typeText1" type="text" />
+          </MDBCol>
+          <MDBCol size="12" className="py-3">
+            <MDBInput label="Email" id="typeEmail" type="email" />
+          </MDBCol>
+          <MDBCol size="12" className="py-3">
+            <MDBInput label="Message" id="textAreaExample" textarea rows={4} />
+          </MDBCol>
+          <MDBCol className="py-3">
+            <MDBBtn
+              className="mx-2"
+              outline
+              rounded
+              tag="input"
+              type="submit"
+              value="Submit"
             />
-          </div>
-          <div className="col-md-6">
-            <MDBInput
-              value={formValue.lname}
-              name="lname"
-              onChange={onChange}
-              id="validationLastName"
-              required
-              label="Last Name"
-              validation="Please provide a Last Name."
-              invalid
-              type="text"
-            />
-          </div>
-          <div className="col-md-6">
-            <MDBInput
-              value={formValue.city}
-              name="city"
-              onChange={onChange}
-              id="validationCustom03"
-              required
-              label="City"
-              validation="Please provide a valid city."
-              invalid
-            />
-          </div>
-          <div className="col-12">
-            <MDBCheckbox
-              label="Agree to terms and conditions"
-              id="invalidCheck"
-              validation="You must agree before submitting."
-              invalid
-              required
-            />
-          </div>
-          <div className="col-12">
-            <MDBBtn type="submit">Submit form</MDBBtn>
-          </div>
-        </MDBValidation>
+          </MDBCol>
+        </MDBRow>
       </MDBContainer>
     </>
   );

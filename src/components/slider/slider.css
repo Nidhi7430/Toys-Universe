@@ -1,0 +1,22 @@
+.slider_caption {
+  left: 10%;
+  text-align: left;
+  top: 100px;
+  max-width: 500px;
+}
+
+.show_control_icon .carousel-control-next-icon {
+  background-image: url(../../images/right-arrow.png);
+  width: 24px;
+  height: 24px;
+}
+.show_control_icon .carousel-control-prev-icon {
+  background-image: url(../../images/right-arrow.png);
+  width: 24px;
+  height: 24px;
+  transform: rotate(180deg);
+}
+.show_control_icon .carousel-control-next-icon::after,
+.show_control_icon .carousel-control-prev-icon::after {
+  display: none;
+}

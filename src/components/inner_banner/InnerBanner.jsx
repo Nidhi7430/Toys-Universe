@@ -16,7 +16,7 @@ const InnerBanner = (props) => {
             </div>
           </MDBCol>
           <MDBCol size="8">
-            <img src={props.image} className="d-block w-100" />
+            <img src={props.image} className="d-block w-100" alt="banner" />
           </MDBCol>
         </MDBRow>
       </MDBContainer>

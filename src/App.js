@@ -34,6 +34,9 @@ function App() {
             <Route exact path="/">
               <Redirect to="/Home" />
             </Route>
+            <Route exact path="*">
+              <Redirect to="/Home" />
+            </Route>
           </Switch>
         </div>
         <Footer />
