@@ -16,7 +16,7 @@ const Shop = () => {
       <InnerBanner image={shop} title="Shop" />
       <MDBContainer className="py-5 my-3">
         <MDBRow>
-          <MDBCol size="4">
+          <MDBCol md="6" lg="4">
             <ShopProduct
               image={product1}
               image_hover={prodcut1_hover}
@@ -28,7 +28,7 @@ const Shop = () => {
               modalImage2={prodcut1_hover}
             />
           </MDBCol>
-          <MDBCol size="4">
+          <MDBCol md="6" lg="4">
             <ShopProduct
               image={product2}
               image_hover={prodcut2_hover}
@@ -40,7 +40,7 @@ const Shop = () => {
               modalImage2={prodcut2_hover}
             />
           </MDBCol>
-          <MDBCol size="4">
+          <MDBCol md="6" lg="4">
             <ShopProduct
               image={product1}
               image_hover={prodcut1_hover}
@@ -52,7 +52,7 @@ const Shop = () => {
               modalImage2={prodcut1_hover}
             />
           </MDBCol>
-          <MDBCol size="4">
+          <MDBCol md="6" lg="4">
             <ShopProduct
               image={product3}
               image_hover={prodcut3_hover}

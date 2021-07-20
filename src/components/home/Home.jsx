@@ -9,18 +9,18 @@ import LatestArrivalProduct from "../latest_arrival_product/LatestArrivalProduct
 import latest_arrival1 from "../../images/latest_arrival1.webp";
 import latest_arrival2 from "../../images/latest_arrival2.webp";
 import latest_arrival3 from "../../images/latest_arrival3.webp";
-import { MDBTypography } from "mdb-react-ui-kit";
+import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdb-react-ui-kit";
 
 const Home = () => {
   return (
     <>
       <section className="home">
-        <div className="container">
-          <div className="row">
-            <div className="col-8">
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol lg="8" md="8">
               <Slider />
-            </div>
-            <div className="col-4 d-flex flex-column">
+            </MDBCol>
+            <MDBCol lg="4" md="4" className="d-flex flex-column">
               <FillerImage
                 cardTitle="About the Toys Universe"
                 buttonText="Our Story"
@@ -28,55 +28,55 @@ const Home = () => {
               />
               <br />
               <FillerImage image={home2} />
-            </div>
-          </div>
+            </MDBCol>
+          </MDBRow>
           <br />
-          <div className="row">
-            <div className="col-4">
+          <MDBRow>
+            <MDBCol lg="4" md="4">
               <FillerImage image={home3} />
-            </div>
-            <div className="col-8">
+            </MDBCol>
+            <MDBCol lg="8" md="8">
               <FillerImage
                 cardTitle="20% Discount On All Toy Trains"
                 buttonText="Shop Now"
                 image={home4}
               />
-            </div>
-          </div>
-        </div>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
       </section>
       <section className="latest_arrival text-center py-5 mt-5">
-        <div className="container">
+        <MDBContainer>
           <MDBTypography
             tag="div"
             className="display-5 pb-5 text-info text-uppercase fw-bold"
           >
             Our latest arrival
           </MDBTypography>
-          <div className="row">
-            <div className="col-4">
+          <MDBRow>
+            <MDBCol md="6" lg="4">
               <LatestArrivalProduct
                 image={latest_arrival1}
                 cardTitle="Wooden Car"
                 price="Rs.2000"
               />
-            </div>
-            <div className="col-4">
+            </MDBCol>
+            <MDBCol md="6" lg="4">
               <LatestArrivalProduct
                 image={latest_arrival2}
                 cardTitle="Wooden Car"
                 price="Rs.2000"
               />
-            </div>
-            <div className="col-4">
+            </MDBCol>
+            <MDBCol md="6" lg="4">
               <LatestArrivalProduct
                 image={latest_arrival3}
                 cardTitle="Wooden Car"
                 price="Rs.2000"
               />
-            </div>
-          </div>
-        </div>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
       </section>
     </>
   );

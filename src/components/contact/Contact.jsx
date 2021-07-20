@@ -14,7 +14,7 @@ const Contact = () => {
   return (
     <>
       <InnerBanner image={contact} title="Contact" />
-      <MDBContainer className="w-50 py-5 my-3">
+      <MDBContainer className="py-5 my-3">
         <MDBTypography
           tag="div"
           className="display-5 pb-5 text-info text-uppercase fw-bold text-center"
@@ -22,16 +22,16 @@ const Contact = () => {
           Contact Us
         </MDBTypography>
         <MDBRow className=" square border border-2 rounded-3 border-info p-4">
-          <MDBCol size="6" className="py-3">
+          <MDBCol lg="6" md="6" className="py-3">
             <MDBInput label="First Name" id="typeText" type="text" />
           </MDBCol>
-          <MDBCol size="6" className="py-3">
+          <MDBCol lg="6" md="6" className="py-3">
             <MDBInput label="Last Name" id="typeText1" type="text" />
           </MDBCol>
-          <MDBCol size="12" className="py-3">
+          <MDBCol lg="12" md="12" className="py-3">
             <MDBInput label="Email" id="typeEmail" type="email" />
           </MDBCol>
-          <MDBCol size="12" className="py-3">
+          <MDBCol lg="12" md="12" className="py-3">
             <MDBInput label="Message" id="textAreaExample" textarea rows={4} />
           </MDBCol>
           <MDBCol className="py-3">
