@@ -1,5 +1,6 @@
-import dotenv from 'dotenv';
-import * as knexConfig from './knex.config';
+import dotenv from "dotenv";
+import { Knex } from "knex";
+import * as knexConfig from "./knex.config";
 
 // env variables
 dotenv.config();
@@ -10,4 +11,4 @@ dotenv.config();
  * @see {@link knexfile.ts}
  */
 
-export const knex = require('knex')(knexConfig);
+export const knex: Knex = require("knex")(knexConfig);

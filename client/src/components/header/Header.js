@@ -71,6 +71,11 @@ const Header = () => {
                 Conatct
               </MDBNavbarLink>
             </MDBNavbarItem>
+            <div
+              id="g_id_onload"
+              data-client_id="579082405488-d7f4lnbr5kio1bukrc5q2ru6h4dtl933.apps.googleusercontent.com"
+              data-login_uri="http://localhost:3000/Home"
+            ></div>
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBContainer>

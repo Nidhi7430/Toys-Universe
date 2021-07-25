@@ -11,7 +11,8 @@ const app = express();
 // save env variables into constant
 const PORT = process.env.PORT;
 
-console.log(process.env.DB_HOST);
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ limit: "10mb", extended: true }));
 
 // Router
 app.use("/toys_universe", ToysUniverse);
