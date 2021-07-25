@@ -20,7 +20,7 @@ const Header = () => {
       <MDBContainer>
         <MDBNavbarBrand href="\Home">
           <h3 className="fw-bold logo">
-            <span className="logo_f_letter">T</span>oy
+            <span className="logo_f_letter">T</span>oys
             <span className="logo_s_letter">U</span>niverse
           </h3>
         </MDBNavbarBrand>

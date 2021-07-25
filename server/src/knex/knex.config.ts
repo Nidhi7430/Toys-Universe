@@ -1,9 +1,9 @@
-import dotenv from 'dotenv';
-import { Knex } from 'knex';
-import path from 'path';
-require('ts-node/register');
+import dotenv from "dotenv";
+import { Knex } from "knex";
+import path from "path";
+require("ts-node/register");
 
-dotenv.config({ path: path.resolve(__dirname + './../../.env') });
+dotenv.config({ path: path.resolve(__dirname + "./../../.env") });
 
 /**
  * @remarks Update your config settings.
@@ -17,15 +17,15 @@ const knexConfig: Knex.Config = {
     database: process.env.DB_NAME,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
-    port: Number.parseInt(process.env.DB_PORT || '5432'),
+    port: Number.parseInt(process.env.DB_PORT || "5432"),
   },
   acquireConnectionTimeout: 10000,
   useNullAsDefault: true,
   migrations: {
-    directory: path.resolve(__dirname + '/migrations'),
+    directory: path.resolve(__dirname + "/migrations"),
   },
   seeds: {
-    directory: path.resolve(__dirname + '/seeds'),
+    directory: path.resolve(__dirname + "/seeds"),
   },
 };
 
