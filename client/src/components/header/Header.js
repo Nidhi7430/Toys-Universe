@@ -16,7 +16,13 @@ const Header = () => {
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
   const path = window.location.pathname;
   return (
-    <MDBNavbar expand="lg" light bgColor="light" fixed="top">
+    <MDBNavbar
+      expand="lg"
+      light
+      bgColor="light"
+      fixed="top"
+      className="menu_hover"
+    >
       <MDBContainer>
         <MDBNavbarBrand href="\Home">
           <h3 className="fw-bold logo">
@@ -40,33 +46,34 @@ const Header = () => {
             <MDBNavbarItem>
               <MDBNavbarLink
                 aria-current="page"
-                href="/Home"
-                className={`text-dark ${path === "/Home" ? "active" : ""}`}
+                href="/HomePage"
+                className={`text-dark ${path === "/HomePage" ? "active" : ""}`}
               >
-                {/* <Link to="/Home">Home</Link> */}Home
+                Home
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink
-                href="/Shop"
-                className={`text-dark ${path === "/Shop" ? "active" : ""}`}
+                href="/ShopPage"
+                className={`text-dark ${path === "/ShopPage" ? "active" : ""}`}
               >
                 Shop
-                {/* <Link to="/List">List</Link> */}
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink
-                href="/About"
-                className={`text-dark ${path === "/About" ? "active" : ""}`}
+                href="/AboutPage"
+                className={`text-dark ${path === "/AboutPage" ? "active" : ""}`}
               >
                 About
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink
-                href="/Contact"
-                className={`text-dark ${path === "/Contact" ? "active" : ""}`}
+                href="/ContactPage"
+                className={`text-dark ${
+                  path === "/ContactPage" ? "active" : ""
+                }`}
               >
                 Conatct
               </MDBNavbarLink>

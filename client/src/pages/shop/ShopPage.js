@@ -1,7 +1,7 @@
 import React from "react";
-import InnerBanner from "../inner_banner/InnerBanner";
+import InnerBanner from "../../components/inner_banner/InnerBanner";
 import shop from "../../images/shop.webp";
-import ShopProduct from "../shop_product/ShopProduct";
+import ShopProduct from "../../components/shop_product/ShopProduct";
 import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
 import product1 from "../../images/product1.webp";
 import prodcut1_hover from "../../images/product1_hover.webp";
@@ -10,7 +10,7 @@ import prodcut2_hover from "../../images/product2_hover.webp";
 import product3 from "../../images/product3.webp";
 import prodcut3_hover from "../../images/product3_hover.webp";
 
-const Shop = () => {
+const ShopPage = () => {
   return (
     <>
       <InnerBanner image={shop} title="Shop" />
@@ -70,4 +70,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default ShopPage;

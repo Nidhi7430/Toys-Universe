@@ -1,5 +1,5 @@
 import React from "react";
-import InnerBanner from "../inner_banner/InnerBanner";
+import InnerBanner from "../../components/inner_banner/InnerBanner";
 import contact from "../../images/contact.webp";
 import {
   MDBInput,
@@ -10,7 +10,7 @@ import {
   MDBTypography,
 } from "mdb-react-ui-kit";
 
-const Contact = () => {
+const ContactPage = () => {
   return (
     <>
       <InnerBanner image={contact} title="Contact" />
@@ -50,4 +50,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactPage;

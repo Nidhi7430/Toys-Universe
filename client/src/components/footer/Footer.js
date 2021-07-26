@@ -1,6 +1,12 @@
 import React from "react";
 import "./footer.css";
-import { MDBFooter, MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+} from "mdb-react-ui-kit";
 
 const Footer = () => {
   return (
@@ -80,6 +86,11 @@ const Footer = () => {
                     info@gmail.com
                   </a>
                 </li>
+                <li className="my-2">
+                  <a href="#!" className="text-white">
+                    <MDBIcon icon="exclamation" fas />
+                  </a>
+                </li>
               </ul>
             </MDBCol>
           </MDBRow>
@@ -89,8 +100,8 @@ const Footer = () => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a className="text-white" href="https://mdbootstrap.com/">
-            ToyUniverse.com
+          <a className="text-white" href="https://www.toysuniverse.in">
+            toysuniverse.in
           </a>
         </div>
       </MDBFooter>
