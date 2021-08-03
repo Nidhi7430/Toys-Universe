@@ -38,21 +38,24 @@ const AddProductPage = () => {
   };
   return (
     <>
-      <>
-        <InnerBanner image={about} title="Add Product" />
-        <MDBContainer className="py-5 my-3">
-          <MDBTypography
-            tag="div"
-            className="display-5 pb-5 text-info text-uppercase fw-bold text-center"
-          >
-            Add Product
-          </MDBTypography>
-          <MDBRow className=" square border border-2 rounded-3 border-info p-4">
+      <InnerBanner image={about} title="Add Product" />
+      <MDBContainer className="py-5 my-3">
+        <MDBTypography
+          tag="div"
+          className="display-5 pb-5 text-info text-uppercase fw-bold text-center"
+        >
+          Add Product
+        </MDBTypography>
+        <div className="p-3">
+          <MDBRow className="border-2 rounded-3 border-info border square p-4">
             <MDBCol lg="6" md="6" className="py-3">
               <MDBInput label="Name" id="typeText" type="text" />
             </MDBCol>
             <MDBCol lg="6" md="6" className="py-3">
               <MDBInput label="Amazon Link" id="typeURL" type="url" />
+            </MDBCol>
+            <MDBCol lg="6" md="6" className="py-3">
+              <MDBInput label="Price" id="typeNumber" type="number" />
             </MDBCol>
             <MDBCol lg="6" md="6" className="py-3">
               <MDBInput
@@ -63,17 +66,15 @@ const AddProductPage = () => {
               />
             </MDBCol>
             <MDBCol lg="6" md="6" className="py-3">
-              <MDBInput label="Price" id="typeNumber" type="number" />
-            </MDBCol>
-            <MDBCol lg="6" md="6" className="py-3">
               <div className="form-group preview">
                 {file.length > 0 &&
                   file.map((item, index) => {
                     return (
-                      <div key={item}>
+                      <div key={item} className="d-inline">
                         <img src={item} alt="" />
                         <MDBBtn
                           type="button"
+                          className="btn-info mx-2"
                           onClick={() => deleteFile(index)}
                           size="sm"
                         >
@@ -93,7 +94,7 @@ const AddProductPage = () => {
               </div>
               <MDBBtn
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-info mt-3"
                 size="sm"
                 onClick={upload}
               >
@@ -101,15 +102,12 @@ const AddProductPage = () => {
               </MDBBtn>
             </MDBCol>
             <MDBCol lg="6" md="6">
-              <TagsInput
-                selectedTags={selectedTags}
-                tags={["Nodejs", "MongoDB"]}
-              />
+              <TagsInput selectedTags={selectedTags} tags={[]} />
             </MDBCol>
             <MDBCol className="py-3">
               <MDBBtn
-                className="mx-2"
                 outline
+                color="info"
                 rounded
                 tag="input"
                 type="submit"
@@ -117,8 +115,8 @@ const AddProductPage = () => {
               />
             </MDBCol>
           </MDBRow>
-        </MDBContainer>
-      </>
+        </div>
+      </MDBContainer>
     </>
   );
 };

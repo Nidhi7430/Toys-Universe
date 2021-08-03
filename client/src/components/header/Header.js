@@ -17,6 +17,7 @@ import {
   MDBBtn,
 } from "mdb-react-ui-kit";
 import "./header.css";
+import logo from "../../images/logo.png";
 
 const Header = () => {
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
@@ -35,10 +36,11 @@ const Header = () => {
     >
       <MDBContainer>
         <MDBNavbarBrand href="\Home">
-          <h3 className="fw-bold logo">
+          {/* <h3 className="fw-bold logo">
             <span className="logo_f_letter">T</span>oys
             <span className="logo_s_letter">U</span>niverse
-          </h3>
+          </h3> */}
+          <img src={logo} alt="logo" className="mw-100 header_logo" />
         </MDBNavbarBrand>
         <MDBNavbarToggler
           aria-expanded="false"
@@ -51,7 +53,7 @@ const Header = () => {
           <MDBNavbarNav
             right
             fullWidth={false}
-            className="mb-2 mb-lg-0 mr-auto"
+            className="mb-2 mb-lg-0 mr-auto align-items-center"
           >
             <MDBNavbarItem>
               <MDBNavbarLink
@@ -110,18 +112,20 @@ const Header = () => {
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBDropdown>
-                <MDBDropdownToggle tag="a" className="nav-link">
+                <MDBDropdownToggle tag="a" className="nav-link" href="#!">
                   <MDBIcon icon="user /"></MDBIcon>
                 </MDBDropdownToggle>
                 <MDBDropdownMenu>
                   <MDBDropdownItem>
-                    <MDBDropdownLink>Action</MDBDropdownLink>
+                    <MDBDropdownLink href="#!">Action</MDBDropdownLink>
                   </MDBDropdownItem>
                   <MDBDropdownItem>
-                    <MDBDropdownLink>Another action</MDBDropdownLink>
+                    <MDBDropdownLink href="#!">Another action</MDBDropdownLink>
                   </MDBDropdownItem>
                   <MDBDropdownItem>
-                    <MDBDropdownLink>Something else here</MDBDropdownLink>
+                    <MDBDropdownLink href="#!">
+                      Something else here
+                    </MDBDropdownLink>
                   </MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>

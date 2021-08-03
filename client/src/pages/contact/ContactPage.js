@@ -21,30 +21,38 @@ const ContactPage = () => {
         >
           Contact Us
         </MDBTypography>
-        <MDBRow className=" square border border-2 rounded-3 border-info p-4">
-          <MDBCol lg="6" md="6" className="py-3">
-            <MDBInput label="First Name" id="typeText" type="text" />
-          </MDBCol>
-          <MDBCol lg="6" md="6" className="py-3">
-            <MDBInput label="Last Name" id="typeText1" type="text" />
-          </MDBCol>
-          <MDBCol lg="12" md="12" className="py-3">
-            <MDBInput label="Email" id="typeEmail" type="email" />
-          </MDBCol>
-          <MDBCol lg="12" md="12" className="py-3">
-            <MDBInput label="Message" id="textAreaExample" textarea rows={4} />
-          </MDBCol>
-          <MDBCol className="py-3">
-            <MDBBtn
-              className="mx-2"
-              outline
-              rounded
-              tag="input"
-              type="submit"
-              value="Submit"
-            />
-          </MDBCol>
-        </MDBRow>
+        <div className="p-3">
+          <MDBRow className=" square border border-2 rounded-3 border-info p-4">
+            <MDBCol lg="6" md="6" className="py-3">
+              <MDBInput label="First Name" id="typeText" type="text" />
+            </MDBCol>
+            <MDBCol lg="6" md="6" className="py-3">
+              <MDBInput label="Last Name" id="typeText1" type="text" />
+            </MDBCol>
+            <MDBCol lg="12" md="12" className="py-3">
+              <MDBInput label="Email" id="typeEmail" type="email" />
+            </MDBCol>
+            <MDBCol lg="12" md="12" className="py-3">
+              <MDBInput
+                label="Message"
+                id="textAreaExample"
+                textarea
+                rows={4}
+              />
+            </MDBCol>
+            <MDBCol className="py-3">
+              <MDBBtn
+                className="mx-2"
+                outline
+                rounded
+                color="info"
+                tag="input"
+                type="submit"
+                value="Submit"
+              />
+            </MDBCol>
+          </MDBRow>
+        </div>
       </MDBContainer>
     </>
   );

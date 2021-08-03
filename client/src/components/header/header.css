@@ -1,11 +1,6 @@
-.logo {
-  letter-spacing: 12.5px;
-}
-.logo_f_letter {
-  color: rgb(71, 165, 222);
-}
-.logo_s_letter {
-  color: #f55c4a;
+.header_logo {
+  width: 200px;
+  height: 60px;
 }
 .menu_hover .navbar-nav .nav-link:hover,
 .menu_hover .navbar-nav .nav-link:focus {
@@ -14,4 +9,16 @@
 .menu_hover .navbar-nav .show > .nav-link,
 .menu_hover .navbar-nav .nav-link.active {
   color: #f55c4a !important;
+}
+
+.menu_hover .dropdown-menu [data-active="true"] a.dropdown-item,
+.menu_hover .dropdown-menu .dropdown-item:focus,
+.menu_hover .dropdown-menu li:focus .dropdown-item {
+  background-color: #f55c4a;
+  color: #fff;
+}
+.menu_hover .dropdown-item:hover,
+.menu_hover .dropdown-item:focus {
+  background-color: rgb(71, 165, 222);
+  color: #fff;
 }

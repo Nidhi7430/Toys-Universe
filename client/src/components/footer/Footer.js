@@ -7,7 +7,9 @@ import {
   MDBCol,
   MDBIcon,
   MDBBtn,
+  MDBNavbarBrand,
 } from "mdb-react-ui-kit";
+import logo from "../../images/logo.png";
 
 const Footer = () => {
   return (
@@ -16,8 +18,13 @@ const Footer = () => {
         <MDBContainer className="py-5">
           <MDBRow>
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
-              <h5 className="text-uppercase mb-3">Toys Universe</h5>
-              <p className="mb-0">
+              <MDBNavbarBrand
+                href="\Home"
+                className="justify-content-center p-0 m-0"
+              >
+                <img src={logo} alt="logo" className="mw-100 header_logo" />
+              </MDBNavbarBrand>
+              <p className="mb-0 mt-3">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
                 atque ea quis molestias. Fugiat pariatur maxime quis culpa
                 corporis vitae repudiandae aliquam voluptatem veniam, est atque
