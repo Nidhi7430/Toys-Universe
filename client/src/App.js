@@ -4,6 +4,7 @@ import ShopPage from "./pages/shop/ShopPage";
 import HomePage from "./pages/home/HomePage";
 import AboutPage from "./pages/about/AboutPage";
 import ContactPage from "./pages/contact/ContactPage";
+import AddProductPage from "./pages/addProduct/AddProductPage";
 import Footer from "./components/footer/Footer";
 import "./App.css";
 
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/ContactPage">
             <ContactPage />
+          </Route>
+          <Route exact path="/AddProductPage">
+            <AddProductPage />
           </Route>
           <Route exact path="/*">
             <Redirect to="/HomePage" />

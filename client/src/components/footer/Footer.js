@@ -6,6 +6,7 @@ import {
   MDBRow,
   MDBCol,
   MDBIcon,
+  MDBBtn,
 } from "mdb-react-ui-kit";
 
 const Footer = () => {
@@ -15,7 +16,7 @@ const Footer = () => {
         <MDBContainer className="py-5">
           <MDBRow>
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
-              <h5 className="text-uppercase mb-3">Toy Universe</h5>
+              <h5 className="text-uppercase mb-3">Toys Universe</h5>
               <p className="mb-0">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
                 atque ea quis molestias. Fugiat pariatur maxime quis culpa
@@ -86,9 +87,18 @@ const Footer = () => {
                     info@gmail.com
                   </a>
                 </li>
-                <li className="my-2">
+                <li className="mx-1 d-inline">
                   <a href="#!" className="text-white">
-                    <MDBIcon icon="exclamation" fas />
+                    <MDBBtn size="sm" floating>
+                      <MDBIcon fab icon="facebook-f" />
+                    </MDBBtn>
+                  </a>
+                </li>
+                <li className="mx-1 d-inline">
+                  <a href="#!">
+                    <MDBBtn size="sm" floating>
+                      <MDBIcon fab icon="instagram" />
+                    </MDBBtn>
                   </a>
                 </li>
               </ul>

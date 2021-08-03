@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   MDBContainer,
   MDBNavbar,
@@ -9,12 +9,22 @@ import {
   MDBIcon,
   MDBCollapse,
   MDBNavbarItem,
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem,
+  MDBDropdownLink,
+  MDBBtn,
 } from "mdb-react-ui-kit";
 import "./header.css";
 
 const Header = () => {
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
-  const path = window.location.pathname;
+  const [path, showPath] = useState("");
+  useEffect(() => {
+    showPath(window.location.pathname);
+  }, []);
+  // const path = window.location.pathname;
   return (
     <MDBNavbar
       expand="lg"
@@ -77,6 +87,44 @@ const Header = () => {
               >
                 Conatct
               </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink
+                href="/AddProductPage"
+                className={`text-dark ${
+                  path === "/AddProductPage" ? "active" : ""
+                }`}
+              >
+                Add Product
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href="#!">
+                <MDBBtn color="info">SignIn</MDBBtn>
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href="#!">
+                <MDBBtn color="info">Other</MDBBtn>
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBDropdown>
+                <MDBDropdownToggle tag="a" className="nav-link">
+                  <MDBIcon icon="user /"></MDBIcon>
+                </MDBDropdownToggle>
+                <MDBDropdownMenu>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink>Action</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink>Another action</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink>Something else here</MDBDropdownLink>
+                  </MDBDropdownItem>
+                </MDBDropdownMenu>
+              </MDBDropdown>
             </MDBNavbarItem>
           </MDBNavbarNav>
         </MDBCollapse>
