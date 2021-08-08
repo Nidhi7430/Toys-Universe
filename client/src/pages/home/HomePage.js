@@ -1,17 +1,17 @@
 import React from "react";
-import Slider from "../slider/Slider";
-import FillerImage from "../filler_image/FillerImage";
+import Slider from "../../components/slider/Slider";
+import FillerImage from "../../components/filler_image/FillerImage";
 import home1 from "../../images/home1.webp";
 import home2 from "../../images/home2.webp";
 import home3 from "../../images/home3.webp";
 import home4 from "../../images/home4.webp";
-import LatestArrivalProduct from "../latest_arrival_product/LatestArrivalProduct";
+import LatestArrivalProduct from "../../components/latest_arrival_product/LatestArrivalProduct";
 import latest_arrival1 from "../../images/latest_arrival1.webp";
 import latest_arrival2 from "../../images/latest_arrival2.webp";
 import latest_arrival3 from "../../images/latest_arrival3.webp";
 import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdb-react-ui-kit";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <section className="home">
@@ -82,4 +82,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

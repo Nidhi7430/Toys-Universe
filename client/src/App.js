@@ -1,9 +1,10 @@
 import Header from "./components/header/Header";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Shop from "./components/shop/Shop";
-import Home from "./components/home/Home";
-import About from "./components/about/About";
-import Contact from "./components/contact/Contact";
+import ShopPage from "./pages/shop/ShopPage";
+import HomePage from "./pages/home/HomePage";
+import AboutPage from "./pages/about/AboutPage";
+import ContactPage from "./pages/contact/ContactPage";
+import AddProductPage from "./pages/addProduct/AddProductPage";
 import Footer from "./components/footer/Footer";
 import "./App.css";
 
@@ -13,24 +14,24 @@ function App() {
       <Header />
       <div className="main_top_padding">
         <Switch>
-          <Route exact path="/Home">
-            <Home />
+          <Route exact path="/HomePage">
+            <HomePage />
           </Route>
-          <Route exact path="/Shop">
-            <Shop />
+          <Route exact path="/ShopPage">
+            <ShopPage />
           </Route>
-          <Route exact path="/About">
-            <About />
+          <Route exact path="/AboutPage">
+            <AboutPage />
           </Route>
-          <Route exact path="/Contact">
-            <Contact />
+          <Route exact path="/ContactPage">
+            <ContactPage />
+          </Route>
+          <Route exact path="/AddProductPage">
+            <AddProductPage />
           </Route>
           <Route exact path="/*">
-            <Redirect to="/Home" />
+            <Redirect to="/HomePage" />
           </Route>
-          {/* <Route exact path="*">
-            <Redirect to="/Home" />
-          </Route> */}
         </Switch>
       </div>
       <Footer />

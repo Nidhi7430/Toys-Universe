@@ -7,7 +7,7 @@
     "clean": "rimraf ./build",
     "build:client": "cd ../client && npm run build",
     "build:dev": "tsc -w",
-    "build:prod": "tsc",
+    "build": "npm run clean && npm run build:client && tsc",
     "run:dev": "nodemon -L ./build/index.js",
     "start:dev": "concurrently npm:build:dev npm:run:dev",
     "start": "node ./build/index.js",
@@ -21,17 +21,27 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-force-ssl": "^0.3.2",
+    "express-nunjucks": "^2.2.5",
+    "helmet": "^4.6.0",
     "knex": "^0.95.7",
+    "nunjucks": "^3.2.3",
     "pg": "^8.6.0",
-    "ts-node": "^10.1.0"
+    "ts-node": "^10.1.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
+    "@types/knex": "^0.16.1",
     "@types/node": "^16.4.2",
+    "@types/uuid": "^8.3.1",
     "concurrently": "^6.2.0",
     "nodemon": "^2.0.12",
+    "rimraf": "^3.0.2",
     "tslint": "^6.1.3",
     "typescript": "^4.3.5"
   }

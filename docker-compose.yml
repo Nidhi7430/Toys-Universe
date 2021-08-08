@@ -9,7 +9,7 @@ services:
       - ./client:/app/client
     env_file:
       - ./client/.env
-    command: sh -c "yarn && yarn start"
+    command: sh -c "yarn install && yarn start"
     depends_on:
       - server
   server:
@@ -23,7 +23,7 @@ services:
       - ./server/.env
     environment:
       DB_HOST: postgresql
-    command: sh -c "yarn && yarn run start:dev"
+    command: sh -c "yarn install && yarn run start:dev"
     depends_on:
       - postgresql
   postgresql:
