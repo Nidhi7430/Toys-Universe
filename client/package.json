@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "copy": "copyfiles 'build/**/*' ../server/build/client && copyfiles 'public/**/*' ../server/build/client",
-    "build": "cross-env INLINE_RUNTIME_CHUNK=false react-scripts build && echo '/* /index.html 200' | cat >build/_redirects && yarn run copy",
+    "build": "react-scripts build && echo '/* /index.html 200' | cat >build/_redirects && yarn run copy",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
