@@ -9,7 +9,6 @@ import latest_arrival4 from "../../images/latest_arrival4.jpg";
 import latest_arrival5 from "../../images/latest_arrival5.jpg";
 import latest_arrival6 from "../../images/latest_arrival6.jpg";
 import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdb-react-ui-kit";
-
 const HomePage = () => {
   return (
     <>
