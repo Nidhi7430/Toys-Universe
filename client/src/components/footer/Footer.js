@@ -14,7 +14,7 @@ import logo from "../../images/logo.png";
 const Footer = () => {
   return (
     <>
-      <MDBFooter className="text-white text-center text-lg-left footer_bgColor">
+      <MDBFooter className="text-white text-center text-lg-left bg-danger">
         <MDBContainer className="py-5">
           <MDBRow>
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
@@ -26,9 +26,7 @@ const Footer = () => {
               </MDBNavbarBrand>
               <p className="mb-0 mt-3">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-                atque ea quis molestias. Fugiat pariatur maxime quis culpa
-                corporis vitae repudiandae aliquam voluptatem veniam, est atque
-                cumque eum delectus sint!
+                atque ea quis molestias.
               </p>
             </MDBCol>
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
@@ -86,25 +84,31 @@ const Footer = () => {
               <ul className="list-unstyled">
                 <li className="my-2">
                   <a href="#!" className="text-white">
-                    123456-789
+                    vasukienterprise06@gmail.com
                   </a>
                 </li>
-                <li className="my-2">
-                  <a href="#!" className="text-white">
-                    info@gmail.com
-                  </a>
-                </li>
+              </ul>
+              <h6 className="text-uppercase mb-2">Follow us:</h6>
+              <ul className="list-unstyled">
                 <li className="mx-1 d-inline">
                   <a href="#!" className="text-white">
-                    <MDBBtn size="sm" floating>
-                      <MDBIcon fab icon="facebook-f" />
+                    <MDBBtn size="sm" floating className="btn-light">
+                      <MDBIcon
+                        fab
+                        icon="facebook-f"
+                        className="text-danger text-md footer_social_icon"
+                      />
                     </MDBBtn>
                   </a>
                 </li>
                 <li className="mx-1 d-inline">
                   <a href="#!">
-                    <MDBBtn size="sm" floating>
-                      <MDBIcon fab icon="instagram" />
+                    <MDBBtn size="sm" floating className="btn-light">
+                      <MDBIcon
+                        fab
+                        icon="instagram"
+                        className="footer_social_icon text-md text-danger"
+                      />
                     </MDBBtn>
                   </a>
                 </li>

@@ -16,6 +16,12 @@ const TagsInput = (props) => {
   return (
     <>
       <div className="tags-input">
+        <MDBInput
+          type="text"
+          onKeyUp={(event) => (event.key === "Enter" ? addTags(event) : null)}
+          label="Press enter to add tags"
+          id="typeTextTag"
+        />
         <ul id="tags" className="p-0 my-3">
           {tags.map((tag, index) => (
             <li key={index} className="tag d-inline me-2 bg-info p-2 rounded">
@@ -29,12 +35,6 @@ const TagsInput = (props) => {
             </li>
           ))}
         </ul>
-        <MDBInput
-          type="text"
-          onKeyUp={(event) => (event.key === "Enter" ? addTags(event) : null)}
-          label="Press enter to add tags"
-          id="typeTextTag"
-        />
       </div>
     </>
   );

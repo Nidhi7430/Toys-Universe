@@ -57,7 +57,7 @@ const AddProductPage = () => {
           tag="div"
           className="display-5 pb-5 text-info text-uppercase fw-bold text-center"
         >
-          Add Product ({apitest})
+          Add Product
         </MDBTypography>
         <div className="p-3">
           <MDBRow className="border-2 rounded-3 border-info border square p-4">
@@ -114,7 +114,7 @@ const AddProductPage = () => {
                 Upload
               </MDBBtn>
             </MDBCol>
-            <MDBCol lg="6" md="6">
+            <MDBCol lg="6" md="6" className="py-3">
               <TagsInput selectedTags={selectedTags} tags={[]} />
             </MDBCol>
             <MDBCol className="py-3">
