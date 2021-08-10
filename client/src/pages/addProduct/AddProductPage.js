@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import InnerBanner from "../../components/inner_banner/InnerBanner";
 import about from "../../images/about.webp";
 import {
@@ -11,21 +11,21 @@ import {
 } from "mdb-react-ui-kit";
 import TagsInput from "../../components/tags_input/TagsInput";
 
-import { api } from "../../services/axios";
+// import { api } from "../../services/axios";
 
 const AddProductPage = () => {
   const [file, setFile] = useState([]);
 
-  const [apitest, setApitest] = useState("");
+  // const [apitest, setApitest] = useState("");
 
-  const loadApi = async () => {
-    const api_res = await api.get("/");
-    setApitest(api_res.data);
-  };
+  // const loadApi = async () => {
+  //   const api_res = await api.get("/");
+  //   setApitest(api_res.data);
+  // };
 
-  useEffect(() => {
-    loadApi();
-  }, []);
+  // useEffect(() => {
+  //   loadApi();
+  // }, []);
 
   function uploadSingleFile(e) {
     let ImagesArray = Object.entries(e.target.files).map((e) =>

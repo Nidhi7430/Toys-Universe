@@ -1,8 +1,6 @@
 import React from "react";
 import Slider from "../../components/slider/Slider";
-import FillerImage from "../../components/filler_image/FillerImage";
-import home3 from "../../images/home3.webp";
-import home4 from "../../images/home4.webp";
+// import FillerImage from "../../components/filler_image/FillerImage";
 import LatestArrivalProduct from "../../components/latest_arrival_product/LatestArrivalProduct";
 import latest_arrival1 from "../../images/latest_arrival1.jpeg";
 import latest_arrival2 from "../../images/latest_arrival2.jpg";
