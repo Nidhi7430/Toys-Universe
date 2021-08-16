@@ -20,7 +20,7 @@ const Footer = () => {
           <MDBRow>
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
               <MDBNavbarBrand
-                href="\Home"
+                href="\HomePage"
                 className="justify-content-center p-0 m-0"
               >
                 <img src={logo} alt="logo" className="mw-100 header_logo" />
@@ -34,23 +34,18 @@ const Footer = () => {
               <h5 className="text-uppercase mb-3">Visit</h5>
               <ul className="list-unstyled">
                 <li className="my-2">
-                  <a href="#!" className="text-white">
+                  <a href="\ShopPage" className="text-white">
                     Shop
                   </a>
                 </li>
                 <li className="my-2">
-                  <a href="#!" className="text-white">
+                  <a href="\AboutPage" className="text-white">
                     About
                   </a>
                 </li>
                 <li className="my-2">
-                  <a href="#!" className="text-white">
+                  <a href="\ContactPage" className="text-white">
                     Contact
-                  </a>
-                </li>
-                <li className="my-2">
-                  <a href="#!" className="text-white">
-                    Stocklist
                   </a>
                 </li>
               </ul>
@@ -84,7 +79,12 @@ const Footer = () => {
               <h5 className="text-uppercase mb-3">Contact Us</h5>
               <ul className="list-unstyled">
                 <li className="my-2">
-                  <a href="#!" className="text-white">
+                  <a
+                    href="mailto:vasukienterprise06@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-white"
+                  >
                     vasukienterprise06@gmail.com
                   </a>
                 </li>
@@ -92,7 +92,11 @@ const Footer = () => {
               <h6 className="text-uppercase mb-2">Follow us:</h6>
               <ul className="list-unstyled">
                 <li className="mx-1 d-inline">
-                  <a href="#!" className="text-white">
+                  <a
+                    href="https://www.facebook.com/toysuniverse.in/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <MDBBtn size="sm" floating className="btn-light">
                       <MDBIcon
                         fab
@@ -103,7 +107,11 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="mx-1 d-inline">
-                  <a href="#!">
+                  <a
+                    href="https://instagram.com/toysuniverse.in/ "
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <MDBBtn size="sm" floating className="btn-light">
                       <MDBIcon
                         fab
