@@ -28,10 +28,18 @@ const ShopProduct = (props) => {
   return (
     <>
       <div className="bg-image hover-overlay">
-        <img src={props.image} className="w-100" alt="product" />
+        <img
+          src={props.image}
+          className="w-100 border border-danger border-3 rounded"
+          alt="product"
+        />
         <a href="#!">
-          <div className="mask">
-            <img src={props.image_hover} className="w-100" alt="product" />
+          <div className="mask  ">
+            <img
+              src={props.image_hover}
+              className="w-100 border-danger border-3 rounded border"
+              alt="product"
+            />
             <MDBBtn
               className="text-dark shop_product_view py-2 w-100 rounded-0"
               onClick={toggleShow}
