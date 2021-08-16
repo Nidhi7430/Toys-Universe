@@ -82,6 +82,7 @@ const Footer = () => {
                   <a
                     href="mailto:vasukienterprise06@gmail.com"
                     target="_blank"
+                    rel="noreferrer"
                     className="text-white"
                   >
                     vasukienterprise06@gmail.com
@@ -94,6 +95,7 @@ const Footer = () => {
                   <a
                     href="https://www.facebook.com/toysuniverse.in/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <MDBBtn size="sm" floating className="btn-light">
                       <MDBIcon
@@ -108,6 +110,7 @@ const Footer = () => {
                   <a
                     href="https://instagram.com/toysuniverse.in/ "
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <MDBBtn size="sm" floating className="btn-light">
                       <MDBIcon
