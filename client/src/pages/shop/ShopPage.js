@@ -26,9 +26,9 @@ const ShopPage = () => {
             <ShopProduct
               image={latest_arrival1}
               image_hover={latest_arrival1_hover}
-              cardTitle="Wooden Car"
+              cardTitle="Bird Puzzle"
               cardText="Rs.2000"
-              modalTitle="Classic Abacus"
+              modalTitle="Bird Puzzle"
               modalText="Rs.2000"
               modalImage1={latest_arrival1}
               modalImage2={latest_arrival1_hover}
@@ -38,9 +38,9 @@ const ShopPage = () => {
             <ShopProduct
               image={latest_arrival2}
               image_hover={latest_arrival2_hover}
-              cardTitle="Wooden Car"
+              cardTitle="Fruit Puzzle"
               cardText="Rs.2000"
-              modalTitle="Classic Abacus"
+              modalTitle="Fruit Puzzle"
               modalText="Rs.2000"
               modalImage1={latest_arrival2}
               modalImage2={latest_arrival2_hover}
@@ -50,9 +50,9 @@ const ShopPage = () => {
             <ShopProduct
               image={latest_arrival3}
               image_hover={latest_arrival3_hover}
-              cardTitle="Wooden Car"
+              cardTitle="Numbers Puzzle"
               cardText="Rs.2000"
-              modalTitle="Classic Abacus"
+              modalTitle="Numbers Puzzle"
               modalText="Rs.2000"
               modalImage1={latest_arrival3}
               modalImage2={latest_arrival3_hover}
@@ -62,9 +62,9 @@ const ShopPage = () => {
             <ShopProduct
               image={latest_arrival4}
               image_hover={latest_arrival4_hover}
-              cardTitle="Wooden Car"
+              cardTitle="Solar System Puzzle"
               cardText="Rs.2000"
-              modalTitle="Classic Abacus"
+              modalTitle="Solar System Puzzle"
               modalText="Rs.2000"
               modalImage1={latest_arrival4}
               modalImage2={latest_arrival4_hover}
@@ -74,9 +74,9 @@ const ShopPage = () => {
             <ShopProduct
               image={latest_arrival5}
               image_hover={latest_arrival5_hover}
-              cardTitle="Wooden Car"
+              cardTitle="Animal Puzzle"
               cardText="Rs.2000"
-              modalTitle="Classic Abacus"
+              modalTitle="Animal Puzzle"
               modalText="Rs.2000"
               modalImage1={latest_arrival5}
               modalImage2={latest_arrival5_hover}
@@ -86,9 +86,9 @@ const ShopPage = () => {
             <ShopProduct
               image={latest_arrival6}
               image_hover={latest_arrival6_hover}
-              cardTitle="Wooden Car"
+              cardTitle="Animal Puzzle"
               cardText="Rs.2000"
-              modalTitle="Classic Abacus"
+              modalTitle="Animal Puzzle"
               modalText="Rs.2000"
               modalImage1={latest_arrival6}
               modalImage2={latest_arrival6_hover}

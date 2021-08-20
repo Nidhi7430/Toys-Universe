@@ -37,11 +37,11 @@ const ShopProduct = (props) => {
           <div className="mask  ">
             <img
               src={props.image_hover}
-              className="w-100 border-danger border-3 rounded border"
+              className="w-100 border border-danger border-3 rounded"
               alt="product"
             />
             <MDBBtn
-              className="text-dark shop_product_view py-2 w-100 rounded-0"
+              className="text-white shop_product_view py-2 w-100 rounded-0"
               onClick={toggleShow}
             >
               Quick View
@@ -53,7 +53,7 @@ const ShopProduct = (props) => {
         <MDBCardBody className="text-center px-0">
           <MDBCardTitle className="fw-bold">{props.cardTitle}</MDBCardTitle>
           <MDBCardText>{props.cardText}</MDBCardText>
-          <MDBBtn className="bg-warning w-100 rounded-pill" href="#">
+          <MDBBtn className="bg-danger w-100 rounded-pill" href="#">
             Add to cart
           </MDBBtn>
         </MDBCardBody>
@@ -110,7 +110,7 @@ const ShopProduct = (props) => {
                       max="10"
                       defaultValue="1"
                     />
-                    <MDBBtn className="bg-warning w-100 rounded-pill mt-5">
+                    <MDBBtn className="bg-danger w-100 rounded-pill mt-5">
                       Add to cart
                     </MDBBtn>
                   </MDBCol>

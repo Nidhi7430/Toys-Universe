@@ -17,12 +17,9 @@ const LatestArrivalProduct = (props) => {
           rippleTag="div"
           rippleColor="light"
         >
-          <MDBCardImage
-            src={props.image}
-            fluid
-            alt="..."
-            className="border border-danger border-3 rounded"
-          />
+          <div className="border border-danger border-3 rounded">
+            <MDBCardImage src={props.image} fluid alt="..." />
+          </div>
           <div
             className="mask"
             style={{ backgroundColor: "rgb(249,49,84,80%)" }}
