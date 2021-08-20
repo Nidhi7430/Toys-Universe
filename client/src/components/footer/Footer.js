@@ -10,7 +10,7 @@ import {
   MDBNavbarBrand,
 } from "mdb-react-ui-kit";
 import logo from "../../images/logo.png";
-// import under_construction from "../../images/under_construction.png";
+import under_construction from "../../images/under_construction.png";
 
 const Footer = () => {
   return (
