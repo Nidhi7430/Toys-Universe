@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   MDBContainer,
   MDBNavbar,
@@ -9,20 +9,38 @@ import {
   MDBIcon,
   MDBCollapse,
   MDBNavbarItem,
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem,
+  MDBDropdownLink,
+  MDBBtn,
 } from "mdb-react-ui-kit";
 import "./header.css";
+import logo from "../../images/logo.png";
 
 const Header = () => {
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
-  const path = window.location.pathname;
+  const [path, showPath] = useState("");
+  useEffect(() => {
+    showPath(window.location.pathname);
+  }, []);
+  // const path = window.location.pathname;
   return (
-    <MDBNavbar expand="lg" light bgColor="light" fixed="top">
+    <MDBNavbar
+      expand="lg"
+      light
+      bgColor="light"
+      fixed="top"
+      className="menu_hover"
+    >
       <MDBContainer>
         <MDBNavbarBrand href="\Home">
-          <h3 className="fw-bold logo">
+          {/* <h3 className="fw-bold logo">
             <span className="logo_f_letter">T</span>oys
             <span className="logo_s_letter">U</span>niverse
-          </h3>
+          </h3> */}
+          <img src={logo} alt="logo" className="mw-100 header_logo" />
         </MDBNavbarBrand>
         <MDBNavbarToggler
           aria-expanded="false"
@@ -35,41 +53,82 @@ const Header = () => {
           <MDBNavbarNav
             right
             fullWidth={false}
-            className="mb-2 mb-lg-0 mr-auto"
+            className="mb-2 mb-lg-0 mr-auto align-items-center"
           >
             <MDBNavbarItem>
               <MDBNavbarLink
                 aria-current="page"
-                href="/Home"
-                className={`text-dark ${path === "/Home" ? "active" : ""}`}
+                href="/HomePage"
+                className={`text-dark ${path === "/HomePage" ? "active" : ""}`}
               >
-                {/* <Link to="/Home">Home</Link> */}Home
+                Home
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink
-                href="/Shop"
-                className={`text-dark ${path === "/Shop" ? "active" : ""}`}
+                href="/ShopPage"
+                className={`text-dark ${path === "/ShopPage" ? "active" : ""}`}
               >
                 Shop
-                {/* <Link to="/List">List</Link> */}
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink
-                href="/About"
-                className={`text-dark ${path === "/About" ? "active" : ""}`}
+                href="/AboutPage"
+                className={`text-dark ${path === "/AboutPage" ? "active" : ""}`}
               >
                 About
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink
-                href="/Contact"
-                className={`text-dark ${path === "/Contact" ? "active" : ""}`}
+                href="/ContactPage"
+                className={`text-dark ${
+                  path === "/ContactPage" ? "active" : ""
+                }`}
               >
                 Conatct
               </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink
+                href="/AddProductPage"
+                className={`text-dark ${
+                  path === "/AddProductPage" ? "active" : ""
+                }`}
+              >
+                Add Product
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href="#!">
+                <MDBBtn color="info">SignIn</MDBBtn>
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href="#!">
+                <MDBBtn color="info">Other</MDBBtn>
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBDropdown>
+                <MDBDropdownToggle tag="a" className="nav-link" href="#!">
+                  <MDBIcon icon="user /"></MDBIcon>
+                </MDBDropdownToggle>
+                <MDBDropdownMenu>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink href="#!">Action</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink href="#!">Another action</MDBDropdownLink>
+                  </MDBDropdownItem>
+                  <MDBDropdownItem>
+                    <MDBDropdownLink href="#!">
+                      Something else here
+                    </MDBDropdownLink>
+                  </MDBDropdownItem>
+                </MDBDropdownMenu>
+              </MDBDropdown>
             </MDBNavbarItem>
           </MDBNavbarNav>
         </MDBCollapse>

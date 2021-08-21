@@ -1,6 +1,15 @@
 import React from "react";
 import "./footer.css";
-import { MDBFooter, MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBIcon,
+  MDBBtn,
+  MDBNavbarBrand,
+} from "mdb-react-ui-kit";
+import logo from "../../images/logo.png";
 
 const Footer = () => {
   return (
@@ -9,8 +18,13 @@ const Footer = () => {
         <MDBContainer className="py-5">
           <MDBRow>
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
-              <h5 className="text-uppercase mb-3">Toy Universe</h5>
-              <p className="mb-0">
+              <MDBNavbarBrand
+                href="\Home"
+                className="justify-content-center p-0 m-0"
+              >
+                <img src={logo} alt="logo" className="mw-100 header_logo" />
+              </MDBNavbarBrand>
+              <p className="mb-0 mt-3">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
                 atque ea quis molestias. Fugiat pariatur maxime quis culpa
                 corporis vitae repudiandae aliquam voluptatem veniam, est atque
@@ -80,6 +94,20 @@ const Footer = () => {
                     info@gmail.com
                   </a>
                 </li>
+                <li className="mx-1 d-inline">
+                  <a href="#!" className="text-white">
+                    <MDBBtn size="sm" floating>
+                      <MDBIcon fab icon="facebook-f" />
+                    </MDBBtn>
+                  </a>
+                </li>
+                <li className="mx-1 d-inline">
+                  <a href="#!">
+                    <MDBBtn size="sm" floating>
+                      <MDBIcon fab icon="instagram" />
+                    </MDBBtn>
+                  </a>
+                </li>
               </ul>
             </MDBCol>
           </MDBRow>
@@ -89,8 +117,8 @@ const Footer = () => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
           &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a className="text-white" href="https://mdbootstrap.com/">
-            ToyUniverse.com
+          <a className="text-white" href="https://www.toysuniverse.in">
+            toysuniverse.in
           </a>
         </div>
       </MDBFooter>

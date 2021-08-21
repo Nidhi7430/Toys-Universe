@@ -1,9 +1,9 @@
 import React from "react";
-import InnerBanner from "../inner_banner/InnerBanner";
+import InnerBanner from "../../components/inner_banner/InnerBanner";
 import about from "../../images/about.webp";
 import { MDBTypography, MDBContainer } from "mdb-react-ui-kit";
 
-const About = () => {
+const AboutPage = () => {
   return (
     <>
       <InnerBanner image={about} title="About" />
@@ -33,4 +33,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;
