@@ -4,8 +4,11 @@
   text-align: center;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(249, 49, 84, 0.75);
 }
 .shop_product_view:hover {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(249, 49, 84, 0.75);
 }
+/* .shop_product_hover_image {
+  opacity: 0.8;
+} */

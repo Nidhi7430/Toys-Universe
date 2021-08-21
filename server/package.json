@@ -7,6 +7,7 @@
     "clean": "rimraf ./build",
     "build:client": "cd ../client && npm run build",
     "build:dev": "tsc -w",
+    "build:prep": "npm run clean && npm run build:client",
     "build": "npm run clean && npm run build:client && tsc",
     "run:dev": "nodemon -L ./build/index.js",
     "start:dev": "concurrently npm:build:dev npm:run:dev",

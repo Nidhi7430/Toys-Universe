@@ -8,12 +8,12 @@
 }
 .menu_hover .navbar-nav .show > .nav-link,
 .menu_hover .navbar-nav .nav-link.active {
-  color: #f55c4a !important;
+  color: rgb(249, 49, 84) !important;
 }
-
+.menu_hover .dropdown-menu [data-active="true"] a.dropdown-item,
 .menu_hover .dropdown-menu .dropdown-item:focus,
 .menu_hover .dropdown-menu li:focus .dropdown-item {
-  background-color: #f55c4a;
+  background-color: rgb(249, 49, 84);
   color: #fff;
 }
 .menu_hover .dropdown-item:hover,

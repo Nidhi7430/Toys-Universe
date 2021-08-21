@@ -17,10 +17,15 @@ const LatestArrivalProduct = (props) => {
           rippleTag="div"
           rippleColor="light"
         >
-          <MDBCardImage src={props.image} fluid alt="..." />
+          <MDBCardImage
+            src={props.image}
+            fluid
+            alt="..."
+            className="border border-danger border-3 rounded"
+          />
           <div
             className="mask"
-            style={{ backgroundColor: "rgb(245,92,74,80%)" }}
+            style={{ backgroundColor: "rgb(249,49,84,80%)" }}
           >
             <div className="d-flex justify-content-center align-items-center h-100">
               <a href="true" className="btn btn-outline-light rounded-pill">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import InnerBanner from "../../components/inner_banner/InnerBanner";
 import about from "../../images/about.webp";
 import {
@@ -11,21 +11,21 @@ import {
 } from "mdb-react-ui-kit";
 import TagsInput from "../../components/tags_input/TagsInput";
 
-import { api } from "../../services/axios";
+// import { api } from "../../services/axios";
 
 const AddProductPage = () => {
   const [file, setFile] = useState([]);
 
-  const [apitest, setApitest] = useState("");
+  // const [apitest, setApitest] = useState("");
 
-  const loadApi = async () => {
-    const api_res = await api.get("/");
-    setApitest(api_res.data);
-  };
+  // const loadApi = async () => {
+  //   const api_res = await api.get("/");
+  //   setApitest(api_res.data);
+  // };
 
-  useEffect(() => {
-    loadApi();
-  }, []);
+  // useEffect(() => {
+  //   loadApi();
+  // }, []);
 
   function uploadSingleFile(e) {
     let ImagesArray = Object.entries(e.target.files).map((e) =>
@@ -57,7 +57,7 @@ const AddProductPage = () => {
           tag="div"
           className="display-5 pb-5 text-info text-uppercase fw-bold text-center"
         >
-          Add Product ({apitest})
+          Add Product
         </MDBTypography>
         <div className="p-3">
           <MDBRow className="border-2 rounded-3 border-info border square p-4">
@@ -114,7 +114,7 @@ const AddProductPage = () => {
                 Upload
               </MDBBtn>
             </MDBCol>
-            <MDBCol lg="6" md="6">
+            <MDBCol lg="6" md="6" className="py-3">
               <TagsInput selectedTags={selectedTags} tags={[]} />
             </MDBCol>
             <MDBCol className="py-3">
