@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "../../components/slider/Slider";
-// import FillerImage from "../../components/filler_image/FillerImage";
 import LatestArrivalProduct from "../../components/latest_arrival_product/LatestArrivalProduct";
 import latest_arrival1 from "../../images/latest_arrival1.jpg";
 import latest_arrival2 from "../../images/latest_arrival2.jpg";
@@ -28,47 +27,59 @@ const HomePage = () => {
             Our latest arrival
           </MDBTypography>
           <MDBRow>
-            <MDBCol md="6" lg="4">
-              <LatestArrivalProduct
-                image={latest_arrival1}
-                cardTitle="Bird Puzzle"
-                price="Rs.2000"
-              />
+            <MDBCol lg="4" sm="6" xs="12" className="my-3">
+              <div className="shadow-5-strong rounded-3 square">
+                <LatestArrivalProduct
+                  image={latest_arrival1}
+                  cardTitle="Bird Puzzle"
+                  price="Rs.499"
+                />
+              </div>
             </MDBCol>
-            <MDBCol md="6" lg="4">
-              <LatestArrivalProduct
-                image={latest_arrival2}
-                cardTitle="Fruit Puzzle"
-                price="Rs.2000"
-              />
+            <MDBCol lg="4" sm="6" xs="12" className="my-3">
+              <div className="shadow-5-strong rounded-3 square">
+                <LatestArrivalProduct
+                  image={latest_arrival2}
+                  cardTitle="Fruit Puzzle"
+                  price="Rs.499"
+                />
+              </div>
             </MDBCol>
-            <MDBCol md="6" lg="4">
-              <LatestArrivalProduct
-                image={latest_arrival3}
-                cardTitle="Numbers Puzzle"
-                price="Rs.2000"
-              />
+            <MDBCol lg="4" sm="6" xs="12" className="my-3">
+              <div className="shadow-5-strong rounded-3 square">
+                <LatestArrivalProduct
+                  image={latest_arrival3}
+                  cardTitle="Numbers Puzzle"
+                  price="Rs.449"
+                />
+              </div>
             </MDBCol>
-            <MDBCol md="6" lg="4">
-              <LatestArrivalProduct
-                image={latest_arrival4}
-                cardTitle="Solar system Puzzle"
-                price="Rs.2000"
-              />
+            <MDBCol lg="4" sm="6" xs="12" className="my-3">
+              <div className="shadow-5-strong rounded-3 square">
+                <LatestArrivalProduct
+                  image={latest_arrival4}
+                  cardTitle="Solar system Puzzle"
+                  price="Rs.399"
+                />
+              </div>
             </MDBCol>
-            <MDBCol md="6" lg="4">
-              <LatestArrivalProduct
-                image={latest_arrival5}
-                cardTitle="Animal Puzzle"
-                price="Rs.2000"
-              />
+            <MDBCol lg="4" sm="6" xs="12" className="my-3">
+              <div className="shadow-5-strong rounded-3 square">
+                <LatestArrivalProduct
+                  image={latest_arrival5}
+                  cardTitle="Animal Puzzle"
+                  price="Rs.499"
+                />
+              </div>
             </MDBCol>
-            <MDBCol md="6" lg="4">
-              <LatestArrivalProduct
-                image={latest_arrival6}
-                cardTitle="Animal Puzzle"
-                price="Rs.2000"
-              />
+            <MDBCol lg="4" sm="6" xs="12" className="my-3">
+              <div className="shadow-5-strong rounded-3 square">
+                <LatestArrivalProduct
+                  image={latest_arrival6}
+                  cardTitle="Wild Animal Puzzle"
+                  price="Rs.499"
+                />
+              </div>
             </MDBCol>
           </MDBRow>
         </section>

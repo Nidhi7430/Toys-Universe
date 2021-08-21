@@ -6,6 +6,7 @@ import {
   MDBCardText,
   MDBCardImage,
   MDBRipple,
+  MDBBtn,
 } from "mdb-react-ui-kit";
 
 const LatestArrivalProduct = (props) => {
@@ -17,10 +18,10 @@ const LatestArrivalProduct = (props) => {
           rippleTag="div"
           rippleColor="light"
         >
-          <div className="border border-danger border-3 rounded">
+          <div className="border-bottom square rounded-top rounded-3">
             <MDBCardImage src={props.image} fluid alt="..." />
           </div>
-          <div
+          {/* <div
             className="mask"
             style={{ backgroundColor: "rgb(249,49,84,80%)" }}
           >
@@ -29,11 +30,14 @@ const LatestArrivalProduct = (props) => {
                 Add to cart
               </a>
             </div>
-          </div>
+          </div> */}
         </MDBRipple>
         <MDBCardBody>
           <MDBCardTitle className="fw-bold">{props.cardTitle}</MDBCardTitle>
           <MDBCardText>{props.price}</MDBCardText>
+          <MDBBtn className="bg-danger rounded-start square">
+            Add to cart
+          </MDBBtn>
         </MDBCardBody>
       </MDBCard>
     </>
