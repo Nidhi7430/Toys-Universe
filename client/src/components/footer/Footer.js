@@ -10,7 +10,7 @@ import {
   MDBNavbarBrand,
 } from "mdb-react-ui-kit";
 import logo from "../../images/logo.png";
-import under_construction from "../../images/under_construction.png";
+// import under_construction from "../../images/under_construction.png";
 
 const Footer = () => {
   return (
@@ -135,13 +135,13 @@ const Footer = () => {
           </a>
         </div>
       </MDBFooter>
-      <div className="under_construction">
+      {/* <div className="under_construction">
         <img
           src={under_construction}
           style={{ verticalAlign: "middle" }}
           alt="under_construction"
         />
-      </div>
+      </div> */}
     </>
   );
 };
