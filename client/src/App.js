@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import Header from './components/header/Header';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import ShopPage from './pages/shop/ShopPage';
@@ -7,8 +8,19 @@ import ContactPage from './pages/contact/ContactPage';
 import AddProductPage from './pages/addProduct/AddProductPage';
 import Footer from './components/footer/Footer';
 import './App.css';
+import * as NetlifyIdentityWidget from 'netlify-identity-widget';
 
 function App() {
+  const [identity, setIdentity] = useState(null);
+
+  useEffect(() => {
+    setIdentity(NetlifyIdentityWidget.init());
+  }, []);
+
+  useEffect(() => {
+    if (identity) console.log(identity.open());
+  }, [identity]);
+
   return (
     <>
       <Header />

@@ -16,25 +16,22 @@ import {
   MDBDropdownLink,
   MDBBtn,
 } from 'mdb-react-ui-kit';
-import { Login } from '../login/Login';
+// import { Login } from '../login/Login';
 import './header.css';
 import logo from '../../images/logo.png';
 
 const Header = () => {
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
-  const [showLogin, setShowLogin] = useState(true);
-
-  const closeLogin = () => setShowLogin(false);
-  const openLogin = () => setShowLogin(true);
-
   const [path, showPath] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+
   useEffect(() => {
     showPath(window.location.pathname);
   }, []);
   // const path = window.location.pathname;
   return (
     <>
-      <Login showLogin={showLogin} closeLogin={closeLogin} />
+      {/* <Login showLogin={showLogin} closeLogin={closeLogin} /> */}
       <MDBNavbar
         expand="lg"
         light
@@ -115,7 +112,7 @@ const Header = () => {
                 </MDBNavbarLink>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBBtn outline rounded color="info" onClick={openLogin}>
+                <MDBBtn outline rounded color="info">
                   Login / Sign Up
                 </MDBBtn>
               </MDBNavbarItem>
