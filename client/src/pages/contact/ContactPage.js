@@ -1,6 +1,6 @@
-import React from "react";
-import InnerBanner from "../../components/inner_banner/InnerBanner";
-import contact from "../../images/contact.webp";
+import React from 'react';
+import InnerBanner from '../../components/inner_banner/InnerBanner';
+import contact from '../../images/contact.webp';
 import {
   MDBInput,
   MDBContainer,
@@ -8,11 +8,12 @@ import {
   MDBCol,
   MDBBtn,
   MDBTypography,
-} from "mdb-react-ui-kit";
+} from 'mdb-react-ui-kit';
+import { PageLayout } from '../../components/page_layout/PageLayout';
 
 const ContactPage = () => {
   return (
-    <>
+    <PageLayout>
       <InnerBanner image={contact} title="Contact" />
       <MDBContainer className="py-5 my-3">
         <MDBTypography
@@ -54,7 +55,7 @@ const ContactPage = () => {
           </MDBRow>
         </div>
       </MDBContainer>
-    </>
+    </PageLayout>
   );
 };
 

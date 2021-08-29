@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import InnerBanner from "../../components/inner_banner/InnerBanner";
-import about from "../../images/about.webp";
+import React, { useState } from 'react';
+import InnerBanner from '../../components/inner_banner/InnerBanner';
+import about from '../../images/about.webp';
 import {
   MDBInput,
   MDBContainer,
@@ -8,8 +8,9 @@ import {
   MDBCol,
   MDBBtn,
   MDBTypography,
-} from "mdb-react-ui-kit";
-import TagsInput from "../../components/tags_input/TagsInput";
+} from 'mdb-react-ui-kit';
+import TagsInput from '../../components/tags_input/TagsInput';
+import { PageLayout } from '../../components/page_layout/PageLayout';
 
 // import { api } from "../../services/axios";
 
@@ -33,7 +34,7 @@ const AddProductPage = () => {
     );
     console.log(ImagesArray);
     setFile([...file, ...ImagesArray]);
-    console.log("file", file);
+    console.log('file', file);
   }
 
   function upload(e) {
@@ -50,7 +51,7 @@ const AddProductPage = () => {
     console.log(tags);
   };
   return (
-    <>
+    <PageLayout>
       <InnerBanner image={about} title="Add Product" />
       <MDBContainer className="py-5 my-3">
         <MDBTypography
@@ -130,7 +131,7 @@ const AddProductPage = () => {
           </MDBRow>
         </div>
       </MDBContainer>
-    </>
+    </PageLayout>
   );
 };
 
