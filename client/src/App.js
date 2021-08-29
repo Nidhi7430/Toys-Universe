@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import Header from './components/header/Header';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import ShopPage from './pages/shop/ShopPage';
-import HomePage from './pages/home/HomePage';
-import AboutPage from './pages/about/AboutPage';
-import ContactPage from './pages/contact/ContactPage';
-import AddProductPage from './pages/addProduct/AddProductPage';
-import Footer from './components/footer/Footer';
-import './App.css';
-import * as NetlifyIdentityWidget from 'netlify-identity-widget';
+import React, { useEffect, useState } from "react";
+import Header from "./components/header/Header";
+import { Switch, Route, Redirect } from "react-router-dom";
+import ShopPage from "./pages/shop/ShopPage";
+import HomePage from "./pages/home/HomePage";
+import AboutPage from "./pages/about/AboutPage";
+import ContactPage from "./pages/contact/ContactPage";
+import AddProductPage from "./pages/addProduct/AddProductPage";
+import Footer from "./components/footer/Footer";
+import "./App.css";
+import * as NetlifyIdentityWidget from "netlify-identity-widget";
 
 function App() {
   const [identity, setIdentity] = useState(null);

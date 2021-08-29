@@ -19,6 +19,7 @@ import {
   MDBCarouselInner,
   MDBCarouselItem,
   MDBCarouselElement,
+  MDBBtnGroup,
 } from "mdb-react-ui-kit";
 
 const ShopProduct = (props) => {
@@ -27,25 +28,11 @@ const ShopProduct = (props) => {
   const toggleShow = () => setOptLgModal(!optLgModal);
   return (
     <>
-      <div className="bg-image hover-overlay">
-        <img
-          src={props.image}
-          className="w-100 border border-danger border-3 rounded"
-          alt="product"
-        />
+      <div className="bg-image hover-overlay border-bottom square rounded-top rounded-3">
+        <img src={props.image} className="w-100" alt="product" />
         <a href="#!">
           <div className="mask  ">
-            <img
-              src={props.image_hover}
-              className="w-100 border-danger border-3 rounded border"
-              alt="product"
-            />
-            <MDBBtn
-              className="text-dark shop_product_view py-2 w-100 rounded-0"
-              onClick={toggleShow}
-            >
-              Quick View
-            </MDBBtn>
+            <img src={props.image_hover} className="w-100" alt="product" />
           </div>
         </a>
       </div>
@@ -53,9 +40,22 @@ const ShopProduct = (props) => {
         <MDBCardBody className="text-center px-0">
           <MDBCardTitle className="fw-bold">{props.cardTitle}</MDBCardTitle>
           <MDBCardText>{props.cardText}</MDBCardText>
-          <MDBBtn className="bg-warning w-100 rounded-pill" href="#">
-            Add to cart
-          </MDBBtn>
+          <MDBBtnGroup>
+            <MDBBtn
+              className="bg-danger rounded-start square"
+              onClick={toggleShow}
+            >
+              View Detail
+            </MDBBtn>
+            <MDBBtn
+              className="rounded-end square"
+              href="#"
+              color="danger"
+              outline
+            >
+              Add to cart
+            </MDBBtn>
+          </MDBBtnGroup>
         </MDBCardBody>
       </MDBCard>
       <MDBModal
@@ -76,8 +76,8 @@ const ShopProduct = (props) => {
             <MDBModalBody>
               <MDBContainer>
                 <MDBRow>
-                  <MDBCol size="7">
-                    <MDBCarousel showIndicators>
+                  <MDBCol lg="7" md="6" sm="12">
+                    <MDBCarousel showIndicators dark>
                       <MDBCarouselInner>
                         <MDBCarouselItem itemId={0}>
                           <MDBCarouselElement
@@ -94,23 +94,46 @@ const ShopProduct = (props) => {
                       </MDBCarouselInner>
                     </MDBCarousel>
                   </MDBCol>
-                  <MDBCol size="5">
-                    <MDBTypography variant="h3" className="fw-bold">
+                  <MDBCol lg="5" md="6" sm="12" className="mt-2">
+                    <MDBTypography variant="h3" className="fw-bold mb-2">
                       {props.modalTitle}
                     </MDBTypography>
-                    <MDBTypography variant="h6" className="fw-bold">
+                    <MDBTypography variant="h5" className="fw-bold mb-3">
                       {props.modalText}
                     </MDBTypography>
-                    <MDBTypography>Quantity</MDBTypography>
+                    <MDBTypography className="mb-2 fw-bold" variant="h6">
+                      Description :
+                    </MDBTypography>
+                    <MDBTypography className="mb-2">
+                      Material : {props.material}
+                    </MDBTypography>
+                    <MDBTypography className="mb-2">
+                      Thickness : {props.thickness}
+                    </MDBTypography>
+                    <MDBTypography className="mb-2">
+                      Size : {props.size}
+                    </MDBTypography>
+                    <MDBTypography className="mb-2">
+                      Package Contains : {props.packageContains}
+                    </MDBTypography>
+                    <MDBTypography className="mb-2">
+                      Item Number : {props.itemNumber}
+                    </MDBTypography>
+                    <MDBTypography className="mb-2 text-warning">
+                      Note : Colors may vary.
+                    </MDBTypography>
+                    <MDBTypography className="d-inline-block me-3">
+                      Quantity :
+                    </MDBTypography>
                     <input
                       type="number"
                       id="typeNumber"
-                      className="form-control w-25"
+                      className="form-control w-25 d-inline-block"
                       min="1"
                       max="10"
                       defaultValue="1"
                     />
-                    <MDBBtn className="bg-warning w-100 rounded-pill mt-5">
+                    <MDBBtn className="bg-danger rounded-3 mt-2 d-block">
                       Add to cart
                     </MDBBtn>
                   </MDBCol>

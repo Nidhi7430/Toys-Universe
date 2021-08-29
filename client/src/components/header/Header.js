@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   MDBContainer,
   MDBNavbar,
@@ -9,26 +9,19 @@ import {
   MDBIcon,
   MDBCollapse,
   MDBNavbarItem,
-  MDBDropdown,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-  MDBDropdownItem,
-  MDBDropdownLink,
   MDBBtn,
-} from 'mdb-react-ui-kit';
-// import { Login } from '../login/Login';
-import './header.css';
-import logo from '../../images/logo.png';
+} from "mdb-react-ui-kit";
+import "./header.css";
+import netlifyIdentity from "netlify-identity-widget";
+import logo from "../../images/logo.png";
 
 const Header = () => {
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
-  const [path, showPath] = useState('');
-  const [userEmail, setUserEmail] = useState('');
+  const [path, showPath] = useState("");
 
   useEffect(() => {
     showPath(window.location.pathname);
   }, []);
-  // const path = window.location.pathname;
   return (
     <>
       {/* <Login showLogin={showLogin} closeLogin={closeLogin} /> */}
@@ -65,7 +58,7 @@ const Header = () => {
                   aria-current="page"
                   href="/HomePage"
                   className={`text-dark ${
-                    path === '/HomePage' ? 'active' : ''
+                    path === "/HomePage" ? "active" : ""
                   }`}
                 >
                   Home
@@ -75,7 +68,7 @@ const Header = () => {
                 <MDBNavbarLink
                   href="/ShopPage"
                   className={`text-dark ${
-                    path === '/ShopPage' ? 'active' : ''
+                    path === "/ShopPage" ? "active" : ""
                   }`}
                 >
                   Shop
@@ -85,7 +78,7 @@ const Header = () => {
                 <MDBNavbarLink
                   href="/AboutPage"
                   className={`text-dark ${
-                    path === '/AboutPage' ? 'active' : ''
+                    path === "/AboutPage" ? "active" : ""
                   }`}
                 >
                   About
@@ -95,49 +88,22 @@ const Header = () => {
                 <MDBNavbarLink
                   href="/ContactPage"
                   className={`text-dark ${
-                    path === '/ContactPage' ? 'active' : ''
+                    path === "/ContactPage" ? "active" : ""
                   }`}
                 >
                   Conatct
                 </MDBNavbarLink>
               </MDBNavbarItem>
-              <MDBNavbarItem>
-                <MDBNavbarLink
-                  href="/AddProductPage"
-                  className={`text-dark ${
-                    path === '/AddProductPage' ? 'active' : ''
-                  }`}
-                >
-                  Add Product
-                </MDBNavbarLink>
-              </MDBNavbarItem>
-              <MDBNavbarItem>
-                <MDBBtn outline rounded color="info">
-                  Login / Sign Up
-                </MDBBtn>
-              </MDBNavbarItem>
 
               <MDBNavbarItem>
-                <MDBDropdown>
-                  <MDBDropdownToggle tag="a" className="nav-link" href="#!">
-                    <MDBIcon icon="user /"></MDBIcon>
-                  </MDBDropdownToggle>
-                  <MDBDropdownMenu>
-                    <MDBDropdownItem>
-                      <MDBDropdownLink href="#!">Action</MDBDropdownLink>
-                    </MDBDropdownItem>
-                    <MDBDropdownItem>
-                      <MDBDropdownLink href="#!">
-                        Another action
-                      </MDBDropdownLink>
-                    </MDBDropdownItem>
-                    <MDBDropdownItem>
-                      <MDBDropdownLink href="#!">
-                        Something else here
-                      </MDBDropdownLink>
-                    </MDBDropdownItem>
-                  </MDBDropdownMenu>
-                </MDBDropdown>
+                <MDBBtn
+                  outline
+                  rounded
+                  color="info"
+                  onClick={netlifyIdentity.open()}
+                >
+                  Login / Sign Up
+                </MDBBtn>
               </MDBNavbarItem>
             </MDBNavbarNav>
           </MDBCollapse>

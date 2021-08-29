@@ -1,5 +1,5 @@
-import React from 'react';
-import './footer.css';
+import React from "react";
+import "./footer.css";
 import {
   MDBFooter,
   MDBContainer,
@@ -8,8 +8,9 @@ import {
   MDBIcon,
   MDBBtn,
   MDBNavbarBrand,
-} from 'mdb-react-ui-kit';
-import logo from '../../images/logo.png';
+} from "mdb-react-ui-kit";
+import logo from "../../images/logo.png";
+// import under_construction from "../../images/under_construction.png";
 
 const Footer = () => {
   return (
@@ -126,9 +127,9 @@ const Footer = () => {
         </MDBContainer>
         <div
           className="text-center p-3"
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
-          &copy; {new Date().getFullYear()} Copyright:{' '}
+          &copy; {new Date().getFullYear()} Copyright:{" "}
           <a className="text-white" href="https://www.toysuniverse.in">
             toysuniverse.in
           </a>
