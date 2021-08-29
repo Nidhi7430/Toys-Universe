@@ -12,16 +12,20 @@ import {
   MDBBtn,
 } from "mdb-react-ui-kit";
 import "./header.css";
-import netlifyIdentity from "netlify-identity-widget";
 import logo from "../../images/logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../../context/auth";
 
 const Header = () => {
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
-  const [path, showPath] = useState("");
+  const [path, setPath] = useState("");
+
+  const { netlifyIdentity } = useContext(AuthContext);
 
   useEffect(() => {
-    showPath(window.location.pathname);
-  }, []);
+    console.log(netlifyIdentity.currentUser());
+    setPath(window.location.pathname);
+  }, [netlifyIdentity]);
   return (
     <>
       {/* <Login showLogin={showLogin} closeLogin={closeLogin} /> */}
@@ -100,7 +104,7 @@ const Header = () => {
                   outline
                   rounded
                   color="info"
-                  onClick={netlifyIdentity.open()}
+                  onClick={() => netlifyIdentity.open()}
                 >
                   Login / Sign Up
                 </MDBBtn>
