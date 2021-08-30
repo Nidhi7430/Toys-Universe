@@ -26,8 +26,8 @@ const Footer = () => {
                 <img src={logo} alt="logo" className="mw-100 header_logo" />
               </MDBNavbarBrand>
               <p className="mb-0 mt-3">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-                atque ea quis molestias.
+                Toys Universe is India's finest and most trusted Educational
+                toys manufacturer
               </p>
             </MDBCol>
             <MDBCol lg="3" md="6" className="mb-4 mb-md-0">

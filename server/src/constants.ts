@@ -1,3 +1,6 @@
-export const SCHEMA = 'toys_universe';
+export const SCHEMA = "toys_universe";
 
-export const PRODUCT_TABLE = 'product';
+export const TABLE = {
+  PRODUCT_TABLE: "product",
+  TAGS_TABLE: "tags",
+};

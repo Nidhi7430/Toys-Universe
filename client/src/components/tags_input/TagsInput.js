@@ -2,14 +2,21 @@ import React from "react";
 import error from "../../images/error.png";
 import { MDBInput } from "mdb-react-ui-kit";
 const TagsInput = (props) => {
-  const [tags, setTags] = React.useState(props.tags);
   const removeTags = (indexToRemove) => {
-    setTags([...tags.filter((_, index) => index !== indexToRemove)]);
+    props.setProductData({
+      ...props.productData,
+      tags: [
+        ...props.productData.tags.filter((_, index) => index !== indexToRemove),
+      ],
+    });
   };
-  const addTags = (event) => {
+
+  const addTag = (event) => {
     if (event.target.value !== "") {
-      setTags([...tags, event.target.value]);
-      props.selectedTags([...tags, event.target.value]);
+      props.setProductData({
+        ...props.productData,
+        tags: [...props.productData.tags, event.target.value],
+      });
       event.target.value = "";
     }
   };
@@ -18,12 +25,14 @@ const TagsInput = (props) => {
       <div className="tags-input">
         <MDBInput
           type="text"
-          onKeyUp={(event) => (event.key === "Enter" ? addTags(event) : null)}
+          onKeyUp={(event) =>
+            [" ", "Enter"].includes(event.key) ? addTag(event) : null
+          }
           label="Press enter to add tags"
           id="typeTextTag"
         />
         <ul id="tags" className="p-0 my-3">
-          {tags.map((tag, index) => (
+          {props.productData.tags.map((tag, index) => (
             <li key={index} className="tag d-inline me-2 bg-info p-2 rounded">
               <span className="tag-title pe-2">{tag}</span>
               <span

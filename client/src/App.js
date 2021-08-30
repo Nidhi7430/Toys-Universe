@@ -13,28 +13,26 @@ function App() {
   return (
     <>
       <Header />
-      <div id="netlify-identity">
-        <Switch>
-          <Route exact path="/HomePage">
-            <HomePage />
-          </Route>
-          <Route exact path="/ShopPage">
-            <ShopPage />
-          </Route>
-          <Route exact path="/AboutPage">
-            <AboutPage />
-          </Route>
-          <Route exact path="/ContactPage">
-            <ContactPage />
-          </Route>
-          <Route exact path="/AddProductPage">
-            <AddProductPage />
-          </Route>
-          <Route exact path="/*">
-            <Redirect to="/HomePage" />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/HomePage">
+          <HomePage />
+        </Route>
+        <Route exact path="/ShopPage">
+          <ShopPage />
+        </Route>
+        <Route exact path="/AboutPage">
+          <AboutPage />
+        </Route>
+        <Route exact path="/ContactPage">
+          <ContactPage />
+        </Route>
+        <Route exact path="/AddProductPage">
+          <AddProductPage />
+        </Route>
+        <Route exact path="/*">
+          <Redirect to="/HomePage" />
+        </Route>
+      </Switch>
       <Footer />
     </>
   );

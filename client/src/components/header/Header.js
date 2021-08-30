@@ -20,12 +20,11 @@ const Header = () => {
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
   const [path, setPath] = useState("");
 
-  const { netlifyIdentity } = useContext(AuthContext);
+  const { netlifyIdentity, user, roles } = useContext(AuthContext);
 
   useEffect(() => {
-    console.log(netlifyIdentity.currentUser());
     setPath(window.location.pathname);
-  }, [netlifyIdentity]);
+  }, []);
   return (
     <>
       {/* <Login showLogin={showLogin} closeLogin={closeLogin} /> */}
@@ -98,6 +97,18 @@ const Header = () => {
                   Conatct
                 </MDBNavbarLink>
               </MDBNavbarItem>
+              {roles.includes("admin") && (
+                <MDBNavbarItem>
+                  <MDBNavbarLink
+                    href="/AddProductPage"
+                    className={`text-dark ${
+                      path === "/AddProductPage" ? "active" : ""
+                    }`}
+                  >
+                    Add Product
+                  </MDBNavbarLink>
+                </MDBNavbarItem>
+              )}
 
               <MDBNavbarItem>
                 <MDBBtn
@@ -106,7 +117,7 @@ const Header = () => {
                   color="info"
                   onClick={() => netlifyIdentity.open()}
                 >
-                  Login / Sign Up
+                  {user ? `Hello ${user}` : "Login / Sign Up"}
                 </MDBBtn>
               </MDBNavbarItem>
             </MDBNavbarNav>

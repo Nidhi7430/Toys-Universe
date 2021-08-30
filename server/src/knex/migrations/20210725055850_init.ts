@@ -1,5 +1,5 @@
-import { Knex } from 'knex';
-import { PRODUCT_TABLE, SCHEMA } from '../../constants';
+import { Knex } from "knex";
+import { SCHEMA, TABLE } from "../../constants";
 
 export async function up(knex: Knex): Promise<void> {
   // create schema
@@ -9,19 +9,29 @@ export async function up(knex: Knex): Promise<void> {
   `);
 
   // create product table
-  await knex.schema.withSchema(SCHEMA).createTable(PRODUCT_TABLE, (t) => {
-    t.increments('id').unsigned().primary();
+  await knex.schema.withSchema(SCHEMA).createTable(TABLE.PRODUCT_TABLE, (t) => {
+    t.increments("id").unsigned().primary();
 
-    t.string('name').notNullable();
-    t.string('description').nullable();
-    t.decimal('price_inr', 18, 2);
+    t.string("name").notNullable().unique();
+    t.string("description").nullable();
+    t.decimal("price_inr", 18, 2);
+    t.string("amazon_link");
 
-    t.timestamp('last_update').defaultTo(knex.fn.now());
+    t.timestamp("last_update").defaultTo(knex.fn.now());
+  });
+
+  // create tags table
+  await knex.schema.withSchema(SCHEMA).createTable(TABLE.TAGS_TABLE, (t) => {
+    t.increments("ud").unsigned().primary();
+    t.string("name")
+      .references("name")
+      .inTable(`${SCHEMA}.${TABLE.PRODUCT_TABLE}`);
+    t.string("tag").notNullable();
   });
 }
 
 export async function down(knex: Knex): Promise<void> {
   await knex.raw(`
-    DROP SCHEMA IF EXISTS ${SCHEMA};
+    DROP SCHEMA IF EXISTS ${SCHEMA} CASCADE;
   `);
 }

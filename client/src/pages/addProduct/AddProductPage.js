@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import InnerBanner from '../../components/inner_banner/InnerBanner';
-import about from '../../images/about.webp';
+import React, { useState } from "react";
+import InnerBanner from "../../components/inner_banner/InnerBanner";
+import about from "../../images/about.webp";
 import {
   MDBInput,
   MDBContainer,
@@ -8,48 +8,40 @@ import {
   MDBCol,
   MDBBtn,
   MDBTypography,
-} from 'mdb-react-ui-kit';
-import TagsInput from '../../components/tags_input/TagsInput';
-import { PageLayout } from '../../components/page_layout/PageLayout';
+} from "mdb-react-ui-kit";
+import { api } from "../../services/axios";
 
-// import { api } from "../../services/axios";
+import TagsInput from "../../components/tags_input/TagsInput";
+import { PageLayout } from "../../components/page_layout/PageLayout";
 
 const AddProductPage = () => {
-  const [file, setFile] = useState([]);
+  const [productData, setProductData] = useState({
+    name: "",
+    description: "",
+    price_inr: 0,
+    tags: [],
+    amazon_link: "",
+  });
 
-  // const [apitest, setApitest] = useState("");
+  const onChangeName = (e) =>
+    setProductData({ ...productData, name: e.target.value });
+  const onChangeDescription = (e) =>
+    setProductData({ ...productData, description: e.target.value });
+  const onChangePrice = (e) =>
+    setProductData({ ...productData, price_inr: e.target.value });
+  const onChangeAmazonLink = (e) =>
+    setProductData({ ...productData, amazon_link: e.target.value });
 
-  // const loadApi = async () => {
-  //   const api_res = await api.get("/");
-  //   setApitest(api_res.data);
-  // };
-
-  // useEffect(() => {
-  //   loadApi();
-  // }, []);
-
-  function uploadSingleFile(e) {
-    let ImagesArray = Object.entries(e.target.files).map((e) =>
-      URL.createObjectURL(e[1])
-    );
-    console.log(ImagesArray);
-    setFile([...file, ...ImagesArray]);
-    console.log('file', file);
-  }
-
-  function upload(e) {
-    e.preventDefault();
-    console.log(file);
-  }
-
-  function deleteFile(e) {
-    const s = file.filter((item, index) => index !== e);
-    setFile(s);
-    console.log(s);
-  }
-  const selectedTags = (tags) => {
-    console.log(tags);
+  const AddProduct = async () => {
+    console.log(productData);
+    await api
+      .post("/product/add", productData)
+      .then((res) => {
+        if (res.status === 201) console.log("Product Added!");
+      })
+      .catch((err) => console.log("Something went wrong!"));
   };
+
   return (
     <PageLayout>
       <InnerBanner image={about} title="Add Product" />
@@ -63,13 +55,32 @@ const AddProductPage = () => {
         <div className="p-3">
           <MDBRow className="border-2 rounded-3 border-info border square p-4">
             <MDBCol lg="6" md="6" className="py-3">
-              <MDBInput label="Name" id="typeText" type="text" />
+              <MDBInput
+                data-name="name"
+                label="Name"
+                id="typeText"
+                type="text"
+                value={productData.name}
+                onChange={onChangeName}
+              />
             </MDBCol>
             <MDBCol lg="6" md="6" className="py-3">
-              <MDBInput label="Amazon Link" id="typeURL" type="url" />
+              <MDBInput
+                label="Amazon Link"
+                id="typeURL"
+                type="url"
+                value={productData.amazon_link}
+                onChange={onChangeAmazonLink}
+              />
             </MDBCol>
             <MDBCol lg="6" md="6" className="py-3">
-              <MDBInput label="Price" id="typeNumber" type="number" />
+              <MDBInput
+                label="Price"
+                id="typeNumber"
+                type="number"
+                value={productData.price_inr}
+                onChange={onChangePrice}
+              />
             </MDBCol>
             <MDBCol lg="6" md="6" className="py-3">
               <MDBInput
@@ -77,56 +88,21 @@ const AddProductPage = () => {
                 id="textAreaExample"
                 textarea
                 rows={4}
+                value={productData.description}
+                onChange={onChangeDescription}
               />
             </MDBCol>
+
             <MDBCol lg="6" md="6" className="py-3">
-              <div className="form-group preview">
-                {file.length > 0 &&
-                  file.map((item, index) => {
-                    return (
-                      <div key={item} className="d-inline">
-                        <img src={item} alt="" />
-                        <MDBBtn
-                          type="button"
-                          className="btn-info mx-2"
-                          onClick={() => deleteFile(index)}
-                          size="sm"
-                        >
-                          delete
-                        </MDBBtn>
-                      </div>
-                    );
-                  })}
-              </div>
-              <div className="form-group">
-                <MDBInput
-                  type="file"
-                  disabled={file.length === 5}
-                  className="form-control"
-                  onChange={uploadSingleFile}
-                />
-              </div>
-              <MDBBtn
-                type="button"
-                className="btn btn-info mt-3"
-                size="sm"
-                onClick={upload}
-              >
-                Upload
-              </MDBBtn>
-            </MDBCol>
-            <MDBCol lg="6" md="6" className="py-3">
-              <TagsInput selectedTags={selectedTags} tags={[]} />
+              <TagsInput
+                productData={productData}
+                setProductData={setProductData}
+              />
             </MDBCol>
             <MDBCol className="py-3">
-              <MDBBtn
-                outline
-                color="info"
-                rounded
-                tag="input"
-                type="submit"
-                value="Submit"
-              />
+              <MDBBtn outline color="info" rounded onClick={AddProduct}>
+                Submit
+              </MDBBtn>
             </MDBCol>
           </MDBRow>
         </div>
