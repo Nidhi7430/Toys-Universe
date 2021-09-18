@@ -13,14 +13,10 @@ import {
 } from "mdb-react-ui-kit";
 import "./header.css";
 import logo from "../../images/logo.png";
-import { useContext } from "react";
-import { AuthContext } from "../../context/auth";
 
 const Header = () => {
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
   const [path, setPath] = useState("");
-
-  const { netlifyIdentity, user, roles } = useContext(AuthContext);
 
   useEffect(() => {
     setPath(window.location.pathname);
@@ -97,27 +93,20 @@ const Header = () => {
                   Conatct
                 </MDBNavbarLink>
               </MDBNavbarItem>
-              {roles.includes("admin") && (
-                <MDBNavbarItem>
-                  <MDBNavbarLink
-                    href="/AddProductPage"
-                    className={`text-dark ${
-                      path === "/AddProductPage" ? "active" : ""
-                    }`}
-                  >
-                    Add Product
-                  </MDBNavbarLink>
-                </MDBNavbarItem>
-              )}
+              <MDBNavbarItem>
+                <MDBNavbarLink
+                  href="/AddProductPage"
+                  className={`text-dark ${
+                    path === "/AddProductPage" ? "active" : ""
+                  }`}
+                >
+                  Add Product
+                </MDBNavbarLink>
+              </MDBNavbarItem>
 
               <MDBNavbarItem>
-                <MDBBtn
-                  outline
-                  rounded
-                  color="info"
-                  onClick={() => netlifyIdentity.open()}
-                >
-                  {user ? `Hello ${user}` : "Login / Sign Up"}
+                <MDBBtn outline rounded color="info">
+                  {"Login / Sign Up"}
                 </MDBBtn>
               </MDBNavbarItem>
             </MDBNavbarNav>

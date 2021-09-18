@@ -26,9 +26,7 @@ function App() {
         <Route exact path="/ContactPage">
           <ContactPage />
         </Route>
-        <Route exact path="/AddProductPage">
-          <AddProductPage />
-        </Route>
+        <Route exact path="/AddProductPage" component={AddProductPage} />
         <Route exact path="/*">
           <Redirect to="/HomePage" />
         </Route>
