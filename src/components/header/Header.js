@@ -16,6 +16,7 @@ import logo from "../../images/logo.png";
 import { AuthContext } from "../../services/auth";
 import { signInWithPopup, signOut } from "@firebase/auth";
 import { firebase_auth, googleProvider } from "../../services/firebase";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { auth, setAuth } = useContext(AuthContext);
@@ -56,7 +57,6 @@ const Header = () => {
   }, []);
   return (
     <>
-      {/* <Login showLogin={showLogin} closeLogin={closeLogin} /> */}
       <MDBNavbar
         expand="lg"
         light
@@ -65,11 +65,7 @@ const Header = () => {
         className="menu_hover"
       >
         <MDBContainer>
-          <MDBNavbarBrand href="\Home">
-            {/* <h3 className="fw-bold logo">
-            <span className="logo_f_letter">T</span>oys
-            <span className="logo_s_letter">U</span>niverse
-          </h3> */}
+          <MDBNavbarBrand>
             <img src={logo} alt="logo" className="mw-100 header_logo" />
           </MDBNavbarBrand>
           <MDBNavbarToggler
@@ -86,55 +82,59 @@ const Header = () => {
               className="mb-2 mb-lg-0 mr-auto align-items-center"
             >
               <MDBNavbarItem>
-                <MDBNavbarLink
-                  aria-current="page"
-                  href="/HomePage"
+                <Link
+                  to="/home"
+                  component={MDBNavbarLink}
                   className={`text-dark ${
                     path === "/HomePage" ? "active" : ""
                   }`}
                 >
                   Home
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink
-                  href="/ShopPage"
+                <Link
+                  to="/shop"
+                  component={MDBNavbarLink}
                   className={`text-dark ${
                     path === "/ShopPage" ? "active" : ""
                   }`}
                 >
                   Shop
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink
-                  href="/AboutPage"
+                <Link
+                  to="/about"
+                  component={MDBNavbarLink}
                   className={`text-dark ${
                     path === "/AboutPage" ? "active" : ""
                   }`}
                 >
                   About
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink
-                  href="/ContactPage"
+                <Link
+                  to="/contact"
+                  component={MDBNavbarLink}
                   className={`text-dark ${
                     path === "/ContactPage" ? "active" : ""
                   }`}
                 >
                   Conatct
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink
-                  href="/AddProductPage"
+                <Link
+                  to="/admin"
+                  component={MDBNavbarLink}
                   className={`text-dark ${
                     path === "/AddProductPage" ? "active" : ""
                   }`}
                 >
                   Add Product
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
 
               <MDBNavbarItem>

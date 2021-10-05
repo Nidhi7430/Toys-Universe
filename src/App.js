@@ -16,21 +16,21 @@ function App() {
       <AuthProvider>
         <Header />
         <Switch>
-          <Route exact path="/HomePage">
+          <Route exact path="/home">
             <HomePage />
           </Route>
-          <Route exact path="/ShopPage">
+          <Route exact path="/shop">
             <ShopPage />
           </Route>
-          <Route exact path="/AboutPage">
+          <Route exact path="/about">
             <AboutPage />
           </Route>
-          <Route exact path="/ContactPage">
+          <Route exact path="/contact">
             <ContactPage />
           </Route>
-          <Route exact path="/AddProductPage" component={AddProductPage} />
+          <Route exact path="/admin" component={AddProductPage} />
           <Route exact path="/*">
-            <Redirect to="/HomePage" />
+            <Redirect to="/home" />
           </Route>
         </Switch>
         <Footer />
