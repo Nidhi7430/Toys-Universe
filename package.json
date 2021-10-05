@@ -6,20 +6,24 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "axios": "^0.21.1",
+    "@types/netlify-identity-widget": "^1.9.2",
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
+    "firebase": "^9.1.1",
     "mdb-react-ui-kit": "^1.1.0",
+    "mdbreact": "^4.6.1",
+    "netlify-identity-widget": "^1.9.2",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
-    "web-vitals": "^2.1.0",
-    "copyfiles": "^2.4.1",
-    "cross-env": "^7.0.3"
+    "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "copy": "copyfiles 'build/**/*' ../server/build/client && copyfiles 'public/**/*' ../server/build/client",
-    "build": "react-scripts build && echo '/* /index.html 200' | cat >build/_redirects && yarn run copy",
+    "build": "react-scripts build && echo '/* /index.html 200' | cat >build/_redirects && npm run copy",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -40,6 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {}
+  }
 }

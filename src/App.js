@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "./components/header/Header";
 import { Switch, Route, Redirect } from "react-router-dom";
 import ShopPage from "./pages/shop/ShopPage";
@@ -7,34 +8,33 @@ import ContactPage from "./pages/contact/ContactPage";
 import AddProductPage from "./pages/addProduct/AddProductPage";
 import Footer from "./components/footer/Footer";
 import "./App.css";
+import AuthProvider from "./services/auth";
 
 function App() {
   return (
     <>
-      <Header />
-      <div className="main_top_padding">
+      <AuthProvider>
+        <Header />
         <Switch>
-          <Route exact path="/HomePage">
+          <Route exact path="/home">
             <HomePage />
           </Route>
-          <Route exact path="/ShopPage">
+          <Route exact path="/shop">
             <ShopPage />
           </Route>
-          <Route exact path="/AboutPage">
+          <Route exact path="/about">
             <AboutPage />
           </Route>
-          <Route exact path="/ContactPage">
+          <Route exact path="/contact">
             <ContactPage />
           </Route>
-          <Route exact path="/AddProductPage">
-            <AddProductPage />
-          </Route>
+          <Route exact path="/admin" component={AddProductPage} />
           <Route exact path="/*">
-            <Redirect to="/HomePage" />
+            <Redirect to="/home" />
           </Route>
         </Switch>
-      </div>
-      <Footer />
+        <Footer />
+      </AuthProvider>
     </>
   );
 }
