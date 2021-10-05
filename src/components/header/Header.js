@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   MDBContainer,
   MDBNavbar,
@@ -13,10 +13,43 @@ import {
 } from "mdb-react-ui-kit";
 import "./header.css";
 import logo from "../../images/logo.png";
+import { AuthContext } from "../../services/auth";
+import { signInWithPopup, signOut } from "@firebase/auth";
+import { firebase_auth, googleProvider } from "../../services/firebase";
 
 const Header = () => {
+  const { auth, setAuth } = useContext(AuthContext);
+
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
   const [path, setPath] = useState("");
+
+  const handleLogin = async () => {
+    try {
+      const result = await signInWithPopup(firebase_auth, googleProvider);
+      setAuth({
+        ...auth,
+        isAuthenticated: true,
+        userEmail: result.user.email,
+        userName: result.user.displayName,
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(firebase_auth);
+      setAuth((prevState) => ({
+        ...prevState,
+        isAuthenticated: false,
+        userEmail: null,
+        userName: null,
+      }));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
     setPath(window.location.pathname);
@@ -105,8 +138,10 @@ const Header = () => {
               </MDBNavbarItem>
 
               <MDBNavbarItem>
-                <MDBBtn outline rounded color="info">
-                  {"Login / Sign Up"}
+                <MDBBtn outline rounded color="info" onClick={handleLogin}>
+                  {auth.isAuthenticated
+                    ? `Hello ${auth.userName}`
+                    : "Login / Sign Up"}
                 </MDBBtn>
               </MDBNavbarItem>
             </MDBNavbarNav>

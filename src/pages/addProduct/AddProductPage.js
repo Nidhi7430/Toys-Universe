@@ -9,7 +9,6 @@ import {
   MDBBtn,
   MDBTypography,
 } from "mdb-react-ui-kit";
-import { api } from "../../services/axios";
 
 import TagsInput from "../../components/tags_input/TagsInput";
 import { PageLayout } from "../../components/page_layout/PageLayout";
@@ -31,16 +30,6 @@ const AddProductPage = () => {
     setProductData({ ...productData, price_inr: e.target.value });
   const onChangeAmazonLink = (e) =>
     setProductData({ ...productData, amazon_link: e.target.value });
-
-  const AddProduct = async () => {
-    console.log(productData);
-    await api
-      .post("/product/add", productData)
-      .then((res) => {
-        if (res.status === 201) console.log("Product Added!");
-      })
-      .catch((err) => console.log("Something went wrong!"));
-  };
 
   return (
     <PageLayout>
@@ -100,7 +89,7 @@ const AddProductPage = () => {
               />
             </MDBCol>
             <MDBCol className="py-3">
-              <MDBBtn outline color="info" rounded onClick={AddProduct}>
+              <MDBBtn outline color="info" rounded>
                 Submit
               </MDBBtn>
             </MDBCol>

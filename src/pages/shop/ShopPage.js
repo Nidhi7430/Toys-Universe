@@ -6,20 +6,10 @@ import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
 import latest_arrival1 from "../../images/latest_arrival1.jpg";
 import latest_arrival2 from "../../images/latest_arrival2.jpg";
 import { PageLayout } from "../../components/page_layout/PageLayout";
-import { useState, useEffect } from "react";
-import { api } from "../../services/axios";
+import { useState } from "react";
 
 const ShopPage = () => {
   const [products, setProducts] = useState([]);
-  const loadProducts = async () => {
-    api.get("/product").then((res) => {
-      if (res.status === 200) setProducts(res.data);
-    });
-  };
-
-  useEffect(() => {
-    loadProducts();
-  }, []);
 
   return (
     <PageLayout>

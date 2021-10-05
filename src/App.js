@@ -8,30 +8,33 @@ import ContactPage from "./pages/contact/ContactPage";
 import AddProductPage from "./pages/addProduct/AddProductPage";
 import Footer from "./components/footer/Footer";
 import "./App.css";
+import AuthProvider from "./services/auth";
 
 function App() {
   return (
     <>
-      <Header />
-      <Switch>
-        <Route exact path="/HomePage">
-          <HomePage />
-        </Route>
-        <Route exact path="/ShopPage">
-          <ShopPage />
-        </Route>
-        <Route exact path="/AboutPage">
-          <AboutPage />
-        </Route>
-        <Route exact path="/ContactPage">
-          <ContactPage />
-        </Route>
-        <Route exact path="/AddProductPage" component={AddProductPage} />
-        <Route exact path="/*">
-          <Redirect to="/HomePage" />
-        </Route>
-      </Switch>
-      <Footer />
+      <AuthProvider>
+        <Header />
+        <Switch>
+          <Route exact path="/HomePage">
+            <HomePage />
+          </Route>
+          <Route exact path="/ShopPage">
+            <ShopPage />
+          </Route>
+          <Route exact path="/AboutPage">
+            <AboutPage />
+          </Route>
+          <Route exact path="/ContactPage">
+            <ContactPage />
+          </Route>
+          <Route exact path="/AddProductPage" component={AddProductPage} />
+          <Route exact path="/*">
+            <Redirect to="/HomePage" />
+          </Route>
+        </Switch>
+        <Footer />
+      </AuthProvider>
     </>
   );
 }

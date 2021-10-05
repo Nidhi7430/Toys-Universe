@@ -1,19 +1,22 @@
+import { initializeApp } from "@firebase/app";
+import { getAuth, GoogleAuthProvider } from "@firebase/auth";
 // Import the functions you need from the SDKs you need
-// import firebase from "firebase/app";
-// // TODO: Add SDKs for Firebase products that you want to use
-// // https://firebase.google.com/docs/web/setup#available-libraries
 
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyChYUERKmEnopDMMRSj_I_Tbv91p38A2LY",
-//   authDomain: "pos1-95504.firebaseapp.com",
-//   databaseURL: "https://pos1-95504.firebaseio.com",
-//   projectId: "pos1-95504",
-//   storageBucket: "pos1-95504.appspot.com",
-//   messagingSenderId: "195849326612",
-//   appId: "1:195849326612:web:fcea71a11f07bd029c9701",
-// };
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+};
 
-// // Initialize Firebase
-// if (!firebase.getApps.)
-// firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+export const firebase_auth = getAuth(app);
+
+export const googleProvider = new GoogleAuthProvider();
