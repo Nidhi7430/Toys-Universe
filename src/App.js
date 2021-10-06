@@ -16,11 +16,6 @@ function App() {
     <>
       <AuthProvider>
         <Header />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <Switch>
           <Route exact path="/home">
             <HomePage />

@@ -4,7 +4,7 @@ import React from "react";
 const InnerBanner = (props) => {
   return (
     <>
-      <MDBContainer>
+      <MDBContainer breakpoint="lg">
         <MDBRow>
           <MDBCol lg="4" md="4" sm="12">
             <div className="bg-info card rounded-0 h-100">

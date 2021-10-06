@@ -10,6 +10,7 @@ import {
   MDBTypography,
 } from "mdb-react-ui-kit";
 import TagsInput from "../../components/tags_input/TagsInput";
+import { PageLayout } from "../../components/page_layout/PageLayout";
 
 // import { api } from "../../services/axios";
 
@@ -51,85 +52,87 @@ const AddProductPage = () => {
   };
   return (
     <>
-      <InnerBanner image={about} title="Add Product" />
-      <MDBContainer className="py-5 my-3">
-        <MDBTypography
-          tag="div"
-          className="display-5 pb-5 text-info text-uppercase fw-bold text-center"
-        >
-          Add Product
-        </MDBTypography>
-        <div className="p-3">
-          <MDBRow className="border-2 rounded-3 border-info border square p-4">
-            <MDBCol lg="6" md="6" className="py-3">
-              <MDBInput label="Name" id="typeText" type="text" />
-            </MDBCol>
-            <MDBCol lg="6" md="6" className="py-3">
-              <MDBInput label="Amazon Link" id="typeURL" type="url" />
-            </MDBCol>
-            <MDBCol lg="6" md="6" className="py-3">
-              <MDBInput label="Price" id="typeNumber" type="number" />
-            </MDBCol>
-            <MDBCol lg="6" md="6" className="py-3">
-              <MDBInput
-                label="Description"
-                id="textAreaExample"
-                textarea
-                rows={4}
-              />
-            </MDBCol>
-            <MDBCol lg="6" md="6" className="py-3">
-              <div className="form-group preview">
-                {file.length > 0 &&
-                  file.map((item, index) => {
-                    return (
-                      <div key={item} className="d-inline">
-                        <img src={item} alt="" />
-                        <MDBBtn
-                          type="button"
-                          className="btn-info mx-2"
-                          onClick={() => deleteFile(index)}
-                          size="sm"
-                        >
-                          delete
-                        </MDBBtn>
-                      </div>
-                    );
-                  })}
-              </div>
-              <div className="form-group">
+      <PageLayout>
+        <InnerBanner image={about} title="Add Product" />
+        <MDBContainer breakpoint="lg" className="py-5 my-3">
+          <MDBTypography
+            tag="div"
+            className="display-5 pb-5 text-info text-uppercase fw-bold text-center"
+          >
+            Add Product
+          </MDBTypography>
+          <div className="p-3">
+            <MDBRow className="border-2 rounded-3 border-info border square p-4">
+              <MDBCol lg="6" md="6" className="py-3">
+                <MDBInput label="Name" id="typeText" type="text" />
+              </MDBCol>
+              <MDBCol lg="6" md="6" className="py-3">
+                <MDBInput label="Amazon Link" id="typeURL" type="url" />
+              </MDBCol>
+              <MDBCol lg="6" md="6" className="py-3">
+                <MDBInput label="Price" id="typeNumber" type="number" />
+              </MDBCol>
+              <MDBCol lg="6" md="6" className="py-3">
                 <MDBInput
-                  type="file"
-                  disabled={file.length === 5}
-                  className="form-control"
-                  onChange={uploadSingleFile}
+                  label="Description"
+                  id="textAreaExample"
+                  textarea
+                  rows={4}
                 />
-              </div>
-              <MDBBtn
-                type="button"
-                className="btn btn-info mt-3"
-                size="sm"
-                onClick={upload}
-              >
-                Upload
-              </MDBBtn>
-            </MDBCol>
-            <MDBCol lg="6" md="6" className="py-3">
-              <TagsInput selectedTags={selectedTags} tags={[]} />
-            </MDBCol>
-            <MDBCol className="py-3">
-              <MDBBtn
-                outline
-                color="info"
-                rounded
-                tag="input"
-                type="submit"
-                value="Submit"
-              />
-            </MDBCol>
-          </MDBRow>
-        </div>
-      </MDBContainer>
+              </MDBCol>
+              <MDBCol lg="6" md="6" className="py-3">
+                <div className="form-group preview">
+                  {file.length > 0 &&
+                    file.map((item, index) => {
+                      return (
+                        <div key={item} className="d-inline">
+                          <img src={item} alt="" />
+                          <MDBBtn
+                            type="button"
+                            className="btn-info mx-2"
+                            onClick={() => deleteFile(index)}
+                            size="sm"
+                          >
+                            delete
+                          </MDBBtn>
+                        </div>
+                      );
+                    })}
+                </div>
+                <div className="form-group">
+                  <MDBInput
+                    type="file"
+                    disabled={file.length === 5}
+                    className="form-control"
+                    onChange={uploadSingleFile}
+                  />
+                </div>
+                <MDBBtn
+                  type="button"
+                  className="btn btn-info mt-3"
+                  size="sm"
+                  onClick={upload}
+                >
+                  Upload
+                </MDBBtn>
+              </MDBCol>
+              <MDBCol lg="6" md="6" className="py-3">
+                <TagsInput selectedTags={selectedTags} tags={[]} />
+              </MDBCol>
+              <MDBCol className="py-3">
+                <MDBBtn
+                  outline
+                  color="info"
+                  rounded
+                  tag="input"
+                  type="submit"
+                  value="Submit"
+                />
+              </MDBCol>
+            </MDBRow>
+          </div>
+        </MDBContainer>
+      </PageLayout>
     </>
   );
 };
