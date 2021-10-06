@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children, ...rest }) => {
         return auth.isAuthenticated ? (
           children
         ) : (
-          <Redirect to={{ pathname: "/profile", state: { from: location } }} />
+          <Redirect to={{ pathname: "/home", state: { from: location } }} />
         );
       }}
     />

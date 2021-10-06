@@ -25,3 +25,7 @@
 .modal-backdrop {
   position: relative !important;
 }
+
+.active-link {
+  color: rgb(249, 49, 84) !important;
+}

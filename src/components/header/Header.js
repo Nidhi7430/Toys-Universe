@@ -13,48 +13,13 @@ import {
 } from "mdb-react-ui-kit";
 import "./header.css";
 import logo from "../../images/logo.png";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../services/auth";
-import { signInWithPopup, signOut } from "@firebase/auth";
-import { firebase_auth, googleProvider } from "../../services/firebase";
-import { Link } from "react-router-dom";
 
 const Header = () => {
-  const { auth, setAuth } = useContext(AuthContext);
-
+  const { auth } = useContext(AuthContext);
   const [showNavNoTogglerRight, setShowNavNoTogglerRight] = useState(false);
-  const [path, setPath] = useState("");
 
-  const handleLogin = async () => {
-    try {
-      const result = await signInWithPopup(firebase_auth, googleProvider);
-      setAuth({
-        ...auth,
-        isAuthenticated: true,
-        userEmail: result.user.email,
-        userName: result.user.displayName,
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleLogout = async () => {
-    try {
-      await signOut(firebase_auth);
-      setAuth((prevState) => ({
-        ...prevState,
-        isAuthenticated: false,
-        userEmail: null,
-        userName: null,
-      }));
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    setPath(window.location.pathname);
-  }, []);
   return (
     <>
       <MDBNavbar
@@ -82,67 +47,57 @@ const Header = () => {
               className="mb-2 mb-lg-0 mr-auto align-items-center"
             >
               <MDBNavbarItem>
-                <Link
-                  to="/home"
-                  component={MDBNavbarLink}
-                  className={`text-dark ${
-                    path === "/HomePage" ? "active" : ""
-                  }`}
-                >
-                  Home
-                </Link>
+                <MDBNavbarLink onClick={() => setShowNavNoTogglerRight(false)}>
+                  <NavLink to="/home" activeClassName="active-link">
+                    Home
+                  </NavLink>
+                </MDBNavbarLink>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <Link
-                  to="/shop"
-                  component={MDBNavbarLink}
-                  className={`text-dark ${
-                    path === "/ShopPage" ? "active" : ""
-                  }`}
-                >
-                  Shop
-                </Link>
+                <MDBNavbarLink onClick={() => setShowNavNoTogglerRight(false)}>
+                  <NavLink to="/shop" activeClassName="active-link">
+                    Shop
+                  </NavLink>
+                </MDBNavbarLink>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <Link
-                  to="/about"
-                  component={MDBNavbarLink}
-                  className={`text-dark ${
-                    path === "/AboutPage" ? "active" : ""
-                  }`}
-                >
-                  About
-                </Link>
+                <MDBNavbarLink onClick={() => setShowNavNoTogglerRight(false)}>
+                  <NavLink to="/about" activeClassName="active-link">
+                    About
+                  </NavLink>
+                </MDBNavbarLink>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <Link
-                  to="/contact"
-                  component={MDBNavbarLink}
-                  className={`text-dark ${
-                    path === "/ContactPage" ? "active" : ""
-                  }`}
-                >
-                  Conatct
-                </Link>
+                <MDBNavbarLink onClick={() => setShowNavNoTogglerRight(false)}>
+                  <NavLink to="/contact" activeClassName="active-link">
+                    Contact
+                  </NavLink>
+                </MDBNavbarLink>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <Link
-                  to="/admin"
-                  component={MDBNavbarLink}
-                  className={`text-dark ${
-                    path === "/AddProductPage" ? "active" : ""
-                  }`}
-                >
-                  Add Product
-                </Link>
+                <MDBNavbarLink onClick={() => setShowNavNoTogglerRight(false)}>
+                  <NavLink to="/admin" activeClassName="active-link">
+                    Admin
+                  </NavLink>
+                </MDBNavbarLink>
               </MDBNavbarItem>
 
               <MDBNavbarItem>
-                <MDBBtn outline rounded color="info" onClick={handleLogin}>
+                {/* <MDBBtn outline rounded color="info" onClick={handleLogin}>
                   {auth.isAuthenticated
                     ? `Hello ${auth.userName}`
                     : "Login / Sign Up"}
-                </MDBBtn>
+                </MDBBtn> */}
+                <NavLink to="/profile">
+                  <MDBBtn
+                    outline
+                    rounded
+                    color="info"
+                    onClick={() => setShowNavNoTogglerRight(false)}
+                  >
+                    {auth.isAuthenticated ? auth.userName : "Login / Sign Up"}
+                  </MDBBtn>
+                </NavLink>
               </MDBNavbarItem>
             </MDBNavbarNav>
           </MDBCollapse>

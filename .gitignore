@@ -24,5 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+netlify.toml
 
 client_secret_579082405488-d7f4lnbr5kio1bukrc5q2ru6h4dtl933.apps.googleusercontent.com.json

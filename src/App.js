@@ -9,12 +9,18 @@ import AddProductPage from "./pages/addProduct/AddProductPage";
 import Footer from "./components/footer/Footer";
 import "./App.css";
 import AuthProvider from "./services/auth";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   return (
     <>
       <AuthProvider>
         <Header />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <Switch>
           <Route exact path="/home">
             <HomePage />
@@ -27,6 +33,9 @@ function App() {
           </Route>
           <Route exact path="/contact">
             <ContactPage />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
           </Route>
           <Route exact path="/admin" component={AddProductPage} />
           <Route exact path="/*">

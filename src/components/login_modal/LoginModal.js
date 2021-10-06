@@ -1,142 +1,96 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import {} from "mdbreact";
 import {
+  MDBContainer,
+  MDBTabs,
+  MDBTabsItem,
+  MDBTabsLink,
+  MDBTabsContent,
+  MDBTabsPane,
+  MDBCard,
+  MDBCardBody,
+  MDBTypography,
   MDBBtn,
-  MDBModal,
-  MDBModalDialog,
-  MDBModalContent,
-  MDBModalHeader,
-  MDBModalTitle,
-  MDBModalBody,
-  MDBInput,
+  MDBAccordion,
+  MDBAccordionItem,
 } from "mdb-react-ui-kit";
+import Login from "./Login";
+import Signup from "./Signup";
+import { AuthContext } from "../../services/auth";
 
-const LoginModal = () => {
-  const [toggleOneModal, setToggleOneModal] = useState(false);
-  const [toggleTwoModal, setToggleTwoModal] = useState(false);
+const ProfileModal = () => {
+  const { auth, handleLogout } = useContext(AuthContext);
+  const [activeTab, setActiveTab] = useState("login");
 
+  const toggleTab = (value) => {
+    if (value === activeTab) return;
+    setActiveTab(value);
+  };
   return (
     <>
-      <MDBModal
-        show={toggleOneModal}
-        getOpenState={(e: any) => setToggleOneModal(e)}
-        tabIndex="-1"
-      >
-        <MDBModalDialog centered>
-          <MDBModalContent>
-            <MDBModalHeader>
-              <MDBModalTitle>Login</MDBModalTitle>
-              <MDBBtn
-                className="btn-close"
-                color="none"
-                onClick={() => setToggleOneModal(!toggleOneModal)}
-              ></MDBBtn>
-            </MDBModalHeader>
-            <MDBModalBody>
-              <form>
-                <MDBInput
-                  label="Type your email"
-                  group
-                  type="email"
-                  validate
-                  error="wrong"
-                  success="right"
-                  className="my-4"
-                />
-                <MDBInput
-                  label="Type your password"
-                  group
-                  type="password"
-                  validate
-                  className="my-4"
-                />
-                <p className="font-small d-flex justify-content-end">
-                  Forgot
-                  <a href="#!" className="text-info font-weight-bold ms-1">
-                    Password?
-                  </a>
-                </p>
-                <div className="text-center ">
-                  <MDBBtn color="info">Login</MDBBtn>
-                </div>
-                <p className="font-small d-flex justify-content-center mt-3">
-                  Don't have an account?
-                  <a
-                    onClick={() => {
-                      setToggleOneModal(!toggleOneModal);
-                      setTimeout(() => {
-                        setToggleTwoModal(!toggleTwoModal);
-                      }, 400);
-                    }}
-                    href="#!"
-                    className="text-info font-weight-bold ms-1"
+      <MDBContainer>
+        <MDBCard className="m-3">
+          <MDBCardBody>
+            {auth.isAuthenticated ? (
+              <>
+                <MDBTypography className="display-6 pb-2 border-bottom">
+                  Welcome, {auth.userName}
+                </MDBTypography>
+                <MDBAccordion className="m-2">
+                  <MDBAccordionItem collapseId="order" headerTitle="My Order">
+                    Coming soon!
+                  </MDBAccordionItem>
+                  <MDBAccordionItem
+                    collapseId="wishlist"
+                    headerTitle="My Wishlist"
                   >
-                    Sign up
-                  </a>
-                </p>
-              </form>
-            </MDBModalBody>
-          </MDBModalContent>
-        </MDBModalDialog>
-      </MDBModal>
-      <MDBModal
-        show={toggleTwoModal}
-        getOpenState={(e: any) => setToggleTwoModal(e)}
-        tabIndex="-1"
-      >
-        <MDBModalDialog centered>
-          <MDBModalContent>
-            <MDBModalHeader>
-              <MDBModalTitle>Sign Up</MDBModalTitle>
-              <MDBBtn
-                className="btn-close"
-                color="none"
-                onClick={() => setToggleTwoModal(!toggleTwoModal)}
-              ></MDBBtn>
-            </MDBModalHeader>
-            <MDBModalBody>
-              <MDBInput
-                label="Your name"
-                group
-                type="text"
-                validate
-                error="wrong"
-                success="right"
-                className="my-4"
-              />
-              <MDBInput
-                label="Your email"
-                group
-                type="email"
-                validate
-                error="wrong"
-                success="right"
-                className="my-4"
-              />
-              <MDBInput
-                label="Confirm your email"
-                group
-                type="text"
-                validate
-                error="wrong"
-                success="right"
-                className="my-4"
-              />
-              <MDBInput
-                label="Your password"
-                group
-                type="password"
-                validate
-                className="my-4"
-              />
-              <div className="text-center ">
-                <MDBBtn color="info">Sign Up</MDBBtn>
-              </div>
-            </MDBModalBody>
-          </MDBModalContent>
-        </MDBModalDialog>
-      </MDBModal>
+                    Coming soon!
+                  </MDBAccordionItem>
+                  <MDBAccordionItem collapseId="cart" headerTitle="My Cart">
+                    Coming soon!
+                  </MDBAccordionItem>
+                </MDBAccordion>
+
+                <MDBBtn block onClick={handleLogout}>
+                  Logout
+                </MDBBtn>
+              </>
+            ) : (
+              <>
+                <MDBTabs justify>
+                  <MDBTabsItem>
+                    <MDBTabsLink
+                      onClick={() => toggleTab("login")}
+                      active={activeTab === "login"}
+                    >
+                      Login
+                    </MDBTabsLink>
+                  </MDBTabsItem>
+
+                  <MDBTabsItem>
+                    <MDBTabsLink
+                      onClick={() => toggleTab("signup")}
+                      active={activeTab === "signup"}
+                    >
+                      Sign Up
+                    </MDBTabsLink>
+                  </MDBTabsItem>
+                </MDBTabs>
+                <MDBTabsContent>
+                  <MDBTabsPane show={activeTab === "login"}>
+                    <Login />
+                  </MDBTabsPane>
+                  <MDBTabsPane show={activeTab === "signup"}>
+                    <Signup />
+                  </MDBTabsPane>
+                </MDBTabsContent>
+              </>
+            )}
+          </MDBCardBody>
+        </MDBCard>
+      </MDBContainer>
     </>
   );
 };
 
-export default LoginModal;
+export default ProfileModal;
