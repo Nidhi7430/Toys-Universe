@@ -52,7 +52,7 @@ const AddProductPage = () => {
   return (
     <>
       <InnerBanner image={about} title="Add Product" />
-      <MDBContainer className="py-5 my-3">
+      <MDBContainer breakpoint="md" className="py-5 my-3">
         <MDBTypography
           tag="div"
           className="display-5 pb-5 text-info text-uppercase fw-bold text-center"

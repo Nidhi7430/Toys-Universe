@@ -11,7 +11,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdb-react-ui-kit";
 const HomePage = () => {
   return (
     <>
-      <MDBContainer>
+      <MDBContainer breakpoint="md">
         <section className="home">
           <MDBRow>
             <MDBCol lg="12" md="12">

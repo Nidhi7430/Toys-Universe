@@ -16,9 +16,9 @@ const Footer = () => {
   return (
     <>
       <MDBFooter className="text-white text-center text-lg-left bg-danger">
-        <MDBContainer className="py-5">
+        <MDBContainer breakpoint="md" className="py-5">
           <MDBRow>
-            <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+            <MDBCol lg="3" md="4" sm="6" className="mb-4 mb-md-0">
               <MDBNavbarBrand
                 href="\HomePage"
                 className="justify-content-center p-0 m-0"
@@ -30,7 +30,12 @@ const Footer = () => {
                 atque ea quis molestias.
               </p>
             </MDBCol>
-            <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+            <MDBCol
+              lg="3"
+              md="4"
+              sm="6"
+              className="mb-4 mb-md-0 d-none d-lg-block"
+            >
               <h5 className="text-uppercase mb-3">Visit</h5>
               <ul className="list-unstyled">
                 <li className="my-2">
@@ -50,7 +55,7 @@ const Footer = () => {
                 </li>
               </ul>
             </MDBCol>
-            <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+            <MDBCol lg="3" md="4" sm="6" className="mb-4 mb-md-0">
               <h5 className="text-uppercase mb-3">Information</h5>
               <ul className="list-unstyled">
                 <li className="my-2">
@@ -75,9 +80,9 @@ const Footer = () => {
                 </li>
               </ul>
             </MDBCol>
-            <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+            <MDBCol lg="3" md="4" sm="6" className="mb-md-0 mx-sm-auto">
               <h5 className="text-uppercase mb-3">Contact Us</h5>
-              <ul className="list-unstyled">
+              <ul className="list-unstyled ">
                 <li className="my-2">
                   <a
                     href="mailto:vasukienterprise06@gmail.com"
@@ -89,8 +94,8 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              <h6 className="text-uppercase mb-2">Follow us:</h6>
-              <ul className="list-unstyled">
+              <h6 className="text-uppercase mb-3">Follow us:</h6>
+              <ul className="list-unstyled mb-0">
                 <li className="mx-1 d-inline">
                   <a
                     href="https://www.facebook.com/toysuniverse.in/"

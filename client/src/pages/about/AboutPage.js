@@ -7,7 +7,7 @@ const AboutPage = () => {
   return (
     <>
       <InnerBanner image={about} title="About" />
-      <MDBContainer className="text-center py-5 w-75">
+      <MDBContainer breakpoint="md" className="text-center py-5 w-75">
         <MDBTypography className=" mb-4">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever

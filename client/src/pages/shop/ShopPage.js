@@ -20,7 +20,7 @@ const ShopPage = () => {
   return (
     <>
       <InnerBanner image={shop} title="Shop" />
-      <MDBContainer className="py-5 my-3">
+      <MDBContainer breakpoint="md" className="py-5 my-3">
         <MDBRow>
           <MDBCol lg="4" sm="6" xs="12" className="my-3">
             <div className="shadow-5-strong rounded-3 square">
