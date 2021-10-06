@@ -29,7 +29,7 @@ const Header = () => {
         fixed="top"
         className="menu_hover"
       >
-        <MDBContainer>
+        <MDBContainer breakpoint="lg">
           <MDBNavbarBrand>
             <img src={logo} alt="logo" className="mw-100 header_logo" />
           </MDBNavbarBrand>

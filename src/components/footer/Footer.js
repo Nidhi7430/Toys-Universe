@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <>
       <MDBFooter className="text-white text-center text-lg-left bg-danger">
-        <MDBContainer breakpoint="md" className="py-5">
+        <MDBContainer breakpoint="lg" className="py-5">
           <MDBRow>
             <MDBCol lg="3" md="4" sm="6" className="mb-4 mb-md-0">
               <MDBNavbarBrand
