@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import './styles.css';
 import ReactGA from 'react-ga';
 import { MDBContainer } from 'mdb-react-ui-kit';
-import AppConfig from '../../App.config';
+import config_var from '../../App.config';
 
-ReactGA.initialize(AppConfig.GOOGLE_ANALYTICS.TRACKING_ID);
+ReactGA.initialize(config_var);
 
 export const PageLayout = (props) => {
   useEffect(() => {
