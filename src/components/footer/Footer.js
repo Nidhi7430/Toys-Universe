@@ -90,7 +90,7 @@ const Footer = () => {
                     rel="noreferrer"
                     className="text-white"
                   >
-                    vasukienterprise06@gmail.com
+                    vasukienterprise08@gmail.com
                   </a>
                 </li>
               </ul>
