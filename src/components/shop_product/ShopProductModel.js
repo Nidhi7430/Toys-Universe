@@ -25,9 +25,9 @@ export const ShopProductModal = (props) => {
               <MDBCol lg="7" md="6" sm="12">
                 <MDBCarousel showIndicators dark>
                   <MDBCarouselInner>
-                    {props.image.map((img, index) => (
+                    {props.image.map((image, index) => (
                       <MDBCarouselItem key={index} itemId={index}>
-                        <MDBCarouselElement src={img} alt="..." />
+                        <MDBCarouselElement src={image} alt="..." />
                       </MDBCarouselItem>
                     ))}
                   </MDBCarouselInner>
@@ -38,7 +38,7 @@ export const ShopProductModal = (props) => {
                   {props.productTitle}
                 </MDBTypography>
                 <MDBTypography variant="h5" className="fw-bold mb-3">
-                  Rs. {props.price}
+                  Rs. {props.productPrice}
                 </MDBTypography>
                 <MDBTypography className="m-0   fw-bold" variant="h6">
                   Description
@@ -61,9 +61,15 @@ export const ShopProductModal = (props) => {
                   max="10"
                   defaultValue="1"
                 /> */}
-                <MDBBtn disabled block role="button" className="bg-danger mt-2">
+                {/* <MDBBtn
+                  disabled
+                  block
+                  role="button"
+                  className="mt-2"
+                  color="mdb"
+                >
                   Add to cart
-                </MDBBtn>
+                </MDBBtn> */}
 
                 <MDBBtn
                   href="https://www.amazon.in"
@@ -73,6 +79,16 @@ export const ShopProductModal = (props) => {
                 >
                   Buy from
                   <MDBIcon fab icon="amazon" className="mx-2" />
+                </MDBBtn>
+
+                <MDBBtn
+                  href="https://wa.me/message/4FBPVKH3IYPKL1"
+                  target="_blank"
+                  className="bg-success rounded-3 mt-2 d-block"
+                  role="button"
+                >
+                  Buy from
+                  <MDBIcon fab icon="whatsapp" className="mx-2" />
                 </MDBBtn>
               </MDBCol>
             </MDBRow>
