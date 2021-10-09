@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext } from "react";
 import {
   MDBContainer,
   MDBNavbar,
@@ -10,11 +10,11 @@ import {
   MDBCollapse,
   MDBNavbarItem,
   MDBBtn,
-} from 'mdb-react-ui-kit';
-import './header.css';
-import logo from '../../images/logo.png';
-import { NavLink } from 'react-router-dom';
-import { AuthContext } from '../../services/auth';
+} from "mdb-react-ui-kit";
+import "./header.css";
+import logo from "../../images/logo.png";
+import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../services/auth";
 
 const Header = () => {
   const { auth } = useContext(AuthContext);
@@ -74,13 +74,17 @@ const Header = () => {
                   </NavLink>
                 </MDBNavbarLink>
               </MDBNavbarItem>
-              <MDBNavbarItem>
-                <MDBNavbarLink onClick={() => setShowNavNoTogglerRight(false)}>
-                  <NavLink to="/admin" activeClassName="active-link">
-                    Admin
-                  </NavLink>
-                </MDBNavbarLink>
-              </MDBNavbarItem>
+              {auth.isAuthenticated ? (
+                <MDBNavbarItem>
+                  <MDBNavbarLink
+                    onClick={() => setShowNavNoTogglerRight(false)}
+                  >
+                    <NavLink to="/admin" activeClassName="active-link">
+                      Admin
+                    </NavLink>
+                  </MDBNavbarLink>
+                </MDBNavbarItem>
+              ) : null}
 
               <MDBNavbarItem>
                 {/* <MDBBtn outline rounded color="info" onClick={handleLogin}>
@@ -95,7 +99,7 @@ const Header = () => {
                     color="info"
                     onClick={() => setShowNavNoTogglerRight(false)}
                   >
-                    {auth.isAuthenticated ? auth.userName : 'Login / Sign Up'}
+                    {auth.isAuthenticated ? auth.userName : "Login / Sign Up"}
                   </MDBBtn>
                 </NavLink>
               </MDBNavbarItem>
