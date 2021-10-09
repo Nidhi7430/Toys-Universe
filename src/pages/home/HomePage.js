@@ -9,6 +9,8 @@ import latest_arrival5 from "../../images/latest_arrival5.jpg";
 import latest_arrival6 from "../../images/latest_arrival6.jpg";
 import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdb-react-ui-kit";
 import { PageLayout } from "../../components/page_layout/PageLayout";
+import { products } from "../../services/product_list";
+import ShopProduct from "../../components/shop_product/ShopProduct";
 
 const HomePage = () => {
   return (
@@ -30,60 +32,19 @@ const HomePage = () => {
               Our latest arrival
             </MDBTypography>
             <MDBRow>
-              <MDBCol lg="4" sm="6" xs="12" className="my-3">
-                <div className="shadow-5-strong rounded-3 square">
-                  <LatestArrivalProduct
-                    image={latest_arrival1}
-                    cardTitle="Bird Puzzle"
-                    price="Rs.499"
-                  />
-                </div>
-              </MDBCol>
-              <MDBCol lg="4" sm="6" xs="12" className="my-3">
-                <div className="shadow-5-strong rounded-3 square">
-                  <LatestArrivalProduct
-                    image={latest_arrival2}
-                    cardTitle="Fruit Puzzle"
-                    price="Rs.499"
-                  />
-                </div>
-              </MDBCol>
-              <MDBCol lg="4" sm="6" xs="12" className="my-3">
-                <div className="shadow-5-strong rounded-3 square">
-                  <LatestArrivalProduct
-                    image={latest_arrival3}
-                    cardTitle="Numbers Puzzle"
-                    price="Rs.449"
-                  />
-                </div>
-              </MDBCol>
-              <MDBCol lg="4" sm="6" xs="12" className="my-3">
-                <div className="shadow-5-strong rounded-3 square">
-                  <LatestArrivalProduct
-                    image={latest_arrival4}
-                    cardTitle="Solar system Puzzle"
-                    price="Rs.399"
-                  />
-                </div>
-              </MDBCol>
-              <MDBCol lg="4" sm="6" xs="12" className="my-3">
-                <div className="shadow-5-strong rounded-3 square">
-                  <LatestArrivalProduct
-                    image={latest_arrival5}
-                    cardTitle="Animal Puzzle"
-                    price="Rs.499"
-                  />
-                </div>
-              </MDBCol>
-              <MDBCol lg="4" sm="6" xs="12" className="my-3">
-                <div className="shadow-5-strong rounded-3 square">
-                  <LatestArrivalProduct
-                    image={latest_arrival6}
-                    cardTitle="Wild Animal Puzzle"
-                    price="Rs.499"
-                  />
-                </div>
-              </MDBCol>
+              {products.map((each) => {
+                return (
+                  <MDBCol lg="4" sm="6" xs="12" className="my-3">
+                    <div className="shadow-5-strong rounded-3 square">
+                      <ShopProduct
+                        image={each.image}
+                        productTitle={each.productTitle}
+                        productPrice={each.productPrice}
+                      />
+                    </div>
+                  </MDBCol>
+                );
+              })}
             </MDBRow>
           </section>
         </MDBContainer>
