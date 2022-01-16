@@ -40,6 +40,7 @@ const ContactPage = () => {
                 <MDBInput
                   label="Name"
                   type="text"
+                  disabled
                   value={name}
                   onChange={handleNameChange}
                 />
@@ -48,7 +49,7 @@ const ContactPage = () => {
                 <MDBInput
                   label="Email"
                   type="email"
-                  validate
+                  disabled
                   value={email}
                   onChange={handleEmailChange}
                 />
@@ -58,6 +59,7 @@ const ContactPage = () => {
                   label="Message"
                   textarea
                   rows={4}
+                  disabled
                   value={message}
                   onChange={handleMessageChange}
                 />
@@ -66,6 +68,7 @@ const ContactPage = () => {
                 <MDBBtn
                   className="mx-2"
                   outline
+                  disabled
                   rounded
                   color="info"
                   tag="input"
