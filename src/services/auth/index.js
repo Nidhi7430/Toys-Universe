@@ -1,7 +1,7 @@
-import * as React from "react";
-import { createContext, useState } from "react";
-import { signInWithPopup, signOut } from "@firebase/auth";
-import { firebase_auth, googleProvider } from "../firebase";
+import * as React from 'react';
+import { createContext, useState } from 'react';
+import { signInWithPopup, signOut } from '@firebase/auth';
+import { firebase_auth, googleProvider } from '../firebase';
 
 export const AuthContext = createContext();
 

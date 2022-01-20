@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import {} from "mdbreact";
+import React, { useContext, useState } from 'react';
+import {} from 'mdbreact';
 import {
   MDBContainer,
   MDBTabs,
@@ -15,19 +15,20 @@ import {
   MDBAccordionItem,
   MDBCol,
   MDBRow,
-} from "mdb-react-ui-kit";
-import Login from "./Login";
-import Signup from "./Signup";
-import { AuthContext } from "../../services/auth";
+} from 'mdb-react-ui-kit';
+import Login from './Login';
+import Signup from './Signup';
+import { AuthContext } from '../../services/auth';
 
 const ProfileModal = () => {
   const { auth, handleLogout } = useContext(AuthContext);
-  const [activeTab, setActiveTab] = useState("login");
+  const [activeTab, setActiveTab] = useState('login');
 
   const toggleTab = (value) => {
     if (value === activeTab) return;
     setActiveTab(value);
   };
+
   return (
     <>
       <MDBContainer>
@@ -67,8 +68,8 @@ const ProfileModal = () => {
                     <MDBTabs justify>
                       <MDBTabsItem>
                         <MDBTabsLink
-                          onClick={() => toggleTab("login")}
-                          active={activeTab === "login"}
+                          onClick={() => toggleTab('login')}
+                          active={activeTab === 'login'}
                         >
                           Login
                         </MDBTabsLink>
@@ -76,18 +77,18 @@ const ProfileModal = () => {
 
                       <MDBTabsItem>
                         <MDBTabsLink
-                          onClick={() => toggleTab("signup")}
-                          active={activeTab === "signup"}
+                          onClick={() => toggleTab('signup')}
+                          active={activeTab === 'signup'}
                         >
                           Sign Up
                         </MDBTabsLink>
                       </MDBTabsItem>
                     </MDBTabs>
                     <MDBTabsContent>
-                      <MDBTabsPane show={activeTab === "login"}>
+                      <MDBTabsPane show={activeTab === 'login'}>
                         <Login />
                       </MDBTabsPane>
-                      <MDBTabsPane show={activeTab === "signup"}>
+                      <MDBTabsPane show={activeTab === 'signup'}>
                         <Signup />
                       </MDBTabsPane>
                     </MDBTabsContent>
