@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import InnerBanner from "../../components/inner_banner/InnerBanner";
-import about from "../../images/about.webp";
+import React, { useState } from 'react';
+import InnerBanner from '../../components/inner_banner/InnerBanner';
+import about from '../../images/about.webp';
 import {
   MDBInput,
   MDBContainer,
@@ -8,34 +8,23 @@ import {
   MDBCol,
   MDBBtn,
   MDBTypography,
-} from "mdb-react-ui-kit";
-import TagsInput from "../../components/tags_input/TagsInput";
-import { PageLayout } from "../../components/page_layout/PageLayout";
+  MDBCard,
+  MDBCardImage,
+} from 'mdb-react-ui-kit';
+import TagsInput from '../../components/tags_input/TagsInput';
+import { PageLayout } from '../../components/page_layout/PageLayout';
 
 // import { api } from "../../services/axios";
 
 const AddProductPage = () => {
   const [file, setFile] = useState([]);
 
-  // const [apitest, setApitest] = useState("");
-
-  // const loadApi = async () => {
-  //   const api_res = await api.get("/");
-  //   setApitest(api_res.data);
-  // };
-
-  // useEffect(() => {
-  //   loadApi();
-  // }, []);
-
-  function uploadSingleFile(e) {
-    let ImagesArray = Object.entries(e.target.files).map((e) =>
-      URL.createObjectURL(e[1])
-    );
-    console.log(ImagesArray);
-    setFile([...file, ...ImagesArray]);
-    console.log("file", file);
-  }
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      console.log(e.target.files);
+      setFile((prevFile) => [...prevFile, e.target.files[0]]);
+    }
+  };
 
   function upload(e) {
     e.preventDefault();
@@ -50,6 +39,7 @@ const AddProductPage = () => {
   const selectedTags = (tags) => {
     console.log(tags);
   };
+
   return (
     <>
       <PageLayout>
@@ -81,30 +71,37 @@ const AddProductPage = () => {
                 />
               </MDBCol>
               <MDBCol lg="6" md="6" className="py-3">
-                <div className="form-group preview">
-                  {file.length > 0 &&
-                    file.map((item, index) => {
-                      return (
-                        <div key={item} className="d-inline">
-                          <img src={item} alt="" />
-                          <MDBBtn
-                            type="button"
-                            className="btn-info mx-2"
+                <div className="form-group preview my-2">
+                  <MDBRow className="d-flex">
+                    {file.length > 0 &&
+                      file.map((item, index) => (
+                        <MDBCol md="3" key={index} className="align-self-end">
+                          <MDBCard
+                            border="default"
                             onClick={() => deleteFile(index)}
-                            size="sm"
                           >
-                            delete
-                          </MDBBtn>
-                        </div>
-                      );
-                    })}
+                            <MDBCardImage src={item}></MDBCardImage>
+                          </MDBCard>
+                          {/* <MDBBtn
+                              type="button"
+                              className="btn-info mx-2"
+                              onClick={() => deleteFile(index)}
+                              size="sm"
+                            >
+                              delete
+                            </MDBBtn> */}
+                        </MDBCol>
+                      ))}
+                  </MDBRow>
                 </div>
                 <div className="form-group">
                   <MDBInput
+                    multiple
                     type="file"
-                    disabled={file.length === 5}
+                    accept="image/*"
+                    disabled={file.length >= 5}
                     className="form-control"
-                    onChange={uploadSingleFile}
+                    onChange={handleChange}
                   />
                 </div>
                 <MDBBtn
