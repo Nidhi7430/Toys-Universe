@@ -1,5 +1,5 @@
 import { Cancel } from '@mui/icons-material';
-import { Stack, Button, Typography, CardActions, Alert } from '@mui/material';
+import { Stack, Button, Typography, Alert } from '@mui/material';
 import React, { useRef, useState } from 'react';
 import { Input } from '../custom_styled_components/Input';
 

@@ -4,6 +4,8 @@ import {
   DocumentData,
   DocumentReference,
   getDocs,
+  limit,
+  query,
   updateDoc,
 } from 'firebase/firestore';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
@@ -11,9 +13,10 @@ import { COLLECTION } from '../../constants';
 import { IProduct } from '../../types';
 import { db, storage } from '../Firebase';
 
-export const fetchAllProduct = async () => {
+export const fetchProducts = async (count: number) => {
   const data: Product[] = [];
-  const querySnapshot = await getDocs(collection(db, COLLECTION.PRODUCT));
+  const q = await query(collection(db, COLLECTION.PRODUCT), limit(count));
+  const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) =>
     data.push(new Product(doc.data() as IProduct<string>))
   );

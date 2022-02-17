@@ -1,8 +1,8 @@
-import { Button, Dialog, DialogActions, DialogContent } from '@mui/material';
+import { Button, Dialog } from '@mui/material';
 import React, { useState } from 'react';
 import AddProductCard from '../components/add_product/AddProductCard';
 import PageLayout from '../components/PageLayout';
-import Slider from '../components/Slider';
+import SlideshowManager from '../components/SlideshowManager';
 
 const Admin: React.FC = () => {
   const [openModel, setOpenModel] = useState(0);
@@ -14,7 +14,7 @@ const Admin: React.FC = () => {
         <AddProductCard />
       </Dialog>
       <Dialog open={openModel === 2} onClose={handleClose}>
-        <Slider />
+        <SlideshowManager />
       </Dialog>
       <Button onClick={() => setOpenModel(1)}>Add new product</Button>
       <Button onClick={() => setOpenModel(2)}>Add images to slideshow</Button>

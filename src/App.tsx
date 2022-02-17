@@ -6,6 +6,7 @@ import { AuthProvider } from './context/AuthContext';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Admin from './pages/Admin';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
           <Route path="/profile" component={Profile}></Route>
           <Route path="/" component={Home}></Route>
         </Switch>
+        <Footer />
       </AuthProvider>
     </>
   );

@@ -8,7 +8,7 @@ import { addDoc, collection } from 'firebase/firestore';
 import React, { useContext, useEffect, useState } from 'react';
 import { auth, db, provider } from '../services/Firebase';
 
-const AuthContext = React.createContext<{
+export const AuthContext = React.createContext<{
   user?: User;
   handleSignIn?: () => Promise<void>;
   handleSignOut?: () => Promise<void>;
@@ -34,8 +34,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   const handleSignIn = async () => {
     try {
       await signInWithPopup(auth, provider).then((currentUser) => {
-        if (currentUser.user.displayName && currentUser.user.photoURL)
-          addNewUsers(currentUser.user.displayName, currentUser.user.photoURL);
+        console.log(currentUser);
       });
     } catch (error) {
       console.error(error);

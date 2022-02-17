@@ -4,11 +4,7 @@ import {
   getAuth,
   GoogleAuthProvider,
 } from 'firebase/auth';
-import {
-  connectFirestoreEmulator,
-  enableIndexedDbPersistence,
-  getFirestore,
-} from 'firebase/firestore';
+import { connectFirestoreEmulator, getFirestore } from 'firebase/firestore';
 import { connectStorageEmulator, getStorage } from 'firebase/storage';
 
 const firebaseConfig: FirebaseOptions = {

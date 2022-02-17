@@ -16,7 +16,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         <Slideshow images={product.images as string[]} />
         <CardContent>
           <Typography variant="h5" component="div">
-            {product.name}
+            {product.name || 'Invalid'}
           </Typography>
           {/* <Typography variant="body1">
             {product.description.length > 100
@@ -26,7 +26,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           {/* {product.tags.map((tag: string, index: number) => (
             <Chip key={index} sx={{ mr: 1 }} label={tag} color="success" />
           ))} */}
-          <Typography>₹ {product.price}</Typography>
+          <Typography>₹ {product.price || 'Invalid'}</Typography>
         </CardContent>
         <CardActions>
           <Button size="small">Add to cart</Button>

@@ -4,13 +4,12 @@ import React from 'react';
 const PageLayout: React.FC = ({ children }) => {
   return (
     <Container
-      maxWidth="xl"
+      maxWidth={false}
       sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        height: '90vh',
+        // bgcolor: 'primary.light',
+        display: 'block',
+        position: 'relative',
+        my: '10vh',
       }}
     >
       {children}

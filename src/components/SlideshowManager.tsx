@@ -6,11 +6,17 @@ import {
   CardHeader,
 } from '@mui/material';
 import React, { useState } from 'react';
+import { uploadSliderImages } from '../services/slideshow';
 import ImageUploader from './ImageUploader';
 
-const Slider: React.FC = () => {
+const SlideshowManager: React.FC = () => {
   const [images, setImages] = useState<File[]>([]);
 
+  const handleUpload = async () => {
+    Promise.all(
+      images.map(async (image) => await uploadSliderImages(image))
+    ).then(() => setImages([]));
+  };
   return (
     <>
       <Card sx={{ minWidth: '350px', width: '500px' }}>
@@ -20,11 +26,13 @@ const Slider: React.FC = () => {
         </CardContent>
         <CardActions sx={{ justifyContent: 'space-between' }}>
           <Button disabled></Button>
-          <Button variant="contained">Upload</Button>
+          <Button variant="contained" onClick={handleUpload}>
+            Upload
+          </Button>
         </CardActions>
       </Card>
     </>
   );
 };
 
-export default Slider;
+export default SlideshowManager;
