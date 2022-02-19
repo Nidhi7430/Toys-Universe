@@ -19,11 +19,11 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState<User>();
 
+  // TODO Manage users in Firestore
   const addNewUsers = async (username: string, photoUrl: string) => {
     try {
       const docRef = await addDoc(collection(db, 'users'), {
-        name: username,
-        photoURL: photoUrl,
+        // uid: string,
       });
       console.log('Document written with ID: ', docRef.id);
     } catch (error) {
@@ -34,7 +34,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   const handleSignIn = async () => {
     try {
       await signInWithPopup(auth, provider).then((currentUser) => {
-        console.log(currentUser);
+        // addNewUsers(currentUser.user.uid, currentUser.user.photoURL);
       });
     } catch (error) {
       console.error(error);

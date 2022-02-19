@@ -1,0 +1,20 @@
+{
+  "tasks": [
+    {
+      "label": "start ui",
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "detail": "react-scripts start"
+    },
+    {
+      "label": "start emulator",
+      "type": "shell",
+      "command": "firebase emulators:start --import=./dir --export-on-exit"
+    },
+    {
+      "label": "start",
+      "dependsOn": ["start ui", "start emulator"]
+    }
+  ]
+}

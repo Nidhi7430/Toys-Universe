@@ -1,24 +1,26 @@
+import { Google } from '@mui/icons-material';
+import { Box, Button, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
+import SignIn from './SignIn';
 
 const Profile: React.FC = () => {
   const { user, handleSignIn, handleSignOut } = useAuth();
 
+  if (!user) return <SignIn />;
   return (
-    <>
-      <h2>Sign up</h2>
-      {user ? (
-        <>
-          <h3>username: {user.displayName}</h3>
-          <img src={user.photoURL || ''} alt="user_profile" />
-          <button onClick={handleSignOut}>Sign out</button>
-        </>
-      ) : (
-        <>
-          <button onClick={handleSignIn}>sign in</button>
-        </>
-      )}
-    </>
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+      }}
+    >
+      <Typography>Hi, {user.displayName}</Typography>
+      <Button variant="contained" onClick={handleSignOut}>
+        Log out
+      </Button>
+    </Box>
   );
 };
 

@@ -1,7 +1,7 @@
 import { Button, Dialog } from '@mui/material';
 import React, { useState } from 'react';
 import AddProductCard from '../components/add_product/AddProductCard';
-import PageLayout from '../components/PageLayout';
+import PageLayout from '../components/layout/page_layout/PageLayout';
 import SlideshowManager from '../components/SlideshowManager';
 
 const Admin: React.FC = () => {

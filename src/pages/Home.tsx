@@ -2,7 +2,7 @@ import { Container, Skeleton, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import AboutSection from '../components/AboutSection';
 import Heading from '../components/Heading';
-import PageLayout from '../components/PageLayout';
+import PageLayout from '../components/layout/page_layout/PageLayout';
 import ProductGrid from '../components/ProductGrid';
 import Slideshow from '../components/Slideshow';
 import { fetchAllSliderImages } from '../services/slideshow';
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
   return (
     <>
       <PageLayout>
-        <Slideshow images={slideShowImages} autoplay={5000} />
+        {/* <Slideshow images={slideShowImages} autoplay={5000} /> */}
 
         <Container maxWidth="xl">
           <Heading text="our products" />
