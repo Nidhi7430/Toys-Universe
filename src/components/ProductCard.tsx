@@ -5,11 +5,18 @@ import {
   CardActions,
   Button,
 } from '@mui/material';
-import React from 'react';
-import { Product } from '../services/product';
+import React, { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
+import { CartContext } from '../context/CartContext';
+import { IProduct } from '../types';
 import Slideshow from './Slideshow';
 
-const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
+const ProductCard: React.FC<{ product: IProduct }> = ({ product }) => {
+  // const { user } = useContext(AuthContext);
+  const { addToCart } = useContext(CartContext);
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
   return (
     <>
       <Card>
@@ -18,18 +25,12 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           <Typography variant="h5" component="div">
             {product.name || 'Invalid'}
           </Typography>
-          {/* <Typography variant="body1">
-            {product.description.length > 100
-              ? product.description.substring(0, 100) + '...'
-              : product.description}
-          </Typography> */}
-          {/* {product.tags.map((tag: string, index: number) => (
-            <Chip key={index} sx={{ mr: 1 }} label={tag} color="success" />
-          ))} */}
           <Typography>₹ {product.price || 'Invalid'}</Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Add to cart</Button>
+          <Button size="small" onClick={handleAddToCart}>
+            Add to cart
+          </Button>
           <Button size="small">Buy</Button>
         </CardActions>
       </Card>

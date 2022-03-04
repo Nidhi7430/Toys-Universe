@@ -1,11 +1,11 @@
 import { Button, CardContent, CardActions } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { IProduct } from '../../types';
-import ImageUploader from '../ImageUploader';
+import { INewProduct, IProduct } from '../../types';
+import ImageUploader from '../image_uploader/ImageUploader';
 
 const UploadImage: React.FC<{
-  product: IProduct<File>;
-  setProduct: React.Dispatch<React.SetStateAction<IProduct<File>>>;
+  product: INewProduct;
+  setProduct: React.Dispatch<React.SetStateAction<INewProduct>>;
   setActiveStep: React.Dispatch<React.SetStateAction<number>>;
 }> = ({
   // setDisable,

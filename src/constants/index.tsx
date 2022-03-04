@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Category,
   Home,
@@ -5,7 +6,7 @@ import {
   Person,
   Settings,
 } from '@mui/icons-material';
-import { IProduct } from '../types';
+import { INewProduct } from '../types';
 
 export const TITLE = 'ToysUniverse';
 
@@ -15,21 +16,21 @@ export const PAGES: { label: string; link: string; icon: JSX.Element }[] = [
     link: '/',
     icon: <Home />,
   },
-  {
-    label: 'category',
-    link: '',
-    icon: <Category />,
-  },
-  {
-    label: 'deals',
-    link: '',
-    icon: <LocalOffer />,
-  },
-  {
-    label: 'admin',
-    link: '/admin',
-    icon: <Settings />,
-  },
+  // {
+  //   label: 'category',
+  //   link: '',
+  //   icon: <Category />,
+  // },
+  // {
+  //   label: 'deals',
+  //   link: '',
+  //   icon: <LocalOffer />,
+  // },
+  // {
+  //   label: 'admin',
+  //   link: '/admin',
+  //   icon: <Settings />,
+  // },
 ];
 
 export const COLLECTION = {
@@ -43,7 +44,7 @@ export const STEPS: ('Add Details' | 'Upload Images' | 'Preview' | 'Done')[] = [
   'Done',
 ];
 
-export const EMPTY_PRODUCT: IProduct<File> = {
+export const EMPTY_PRODUCT: INewProduct = {
   name: '',
   description: '',
   price: 0,

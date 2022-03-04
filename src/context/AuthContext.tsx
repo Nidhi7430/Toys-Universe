@@ -1,15 +1,16 @@
+import useId from '@mui/material/utils/useId';
 import {
   onAuthStateChanged,
   signInWithPopup,
   signOut,
   User,
 } from 'firebase/auth';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import React, { useContext, useEffect, useState } from 'react';
-import { auth, db, provider } from '../services/Firebase';
+import { auth, provider } from '../services/Firebase';
 
 export const AuthContext = React.createContext<{
-  user?: User;
+  user?: User | null;
   handleSignIn?: () => Promise<void>;
   handleSignOut?: () => Promise<void>;
 }>({});
@@ -17,15 +18,15 @@ export const AuthContext = React.createContext<{
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider: React.FC = ({ children }) => {
-  const [user, setUser] = useState<User>();
+  const [user, setUser] = useState<User | null>();
 
   // TODO Manage users in Firestore
-  const addNewUsers = async (username: string, photoUrl: string) => {
+  const addNewUsers = async (user: User) => {
     try {
-      const docRef = await addDoc(collection(db, 'users'), {
-        // uid: string,
-      });
-      console.log('Document written with ID: ', docRef.id);
+      // await setDoc(doc(db, 'users', user.uid), {
+      //   email: user.email,
+      //   name: user.displayName,
+      // });
     } catch (error) {
       console.error(error);
     }
@@ -33,9 +34,8 @@ export const AuthProvider: React.FC = ({ children }) => {
 
   const handleSignIn = async () => {
     try {
-      await signInWithPopup(auth, provider).then((currentUser) => {
-        // addNewUsers(currentUser.user.uid, currentUser.user.photoURL);
-      });
+      const resObject = await signInWithPopup(auth, provider);
+      addNewUsers(resObject.user);
     } catch (error) {
       console.error(error);
     }
@@ -44,7 +44,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   const handleSignOut = async () => {
     try {
       await signOut(auth);
-      setUser(undefined);
+      setUser(null);
     } catch (error) {
       console.error(error);
     }

@@ -26,30 +26,35 @@ const Slideshow: React.FC<{ images: string[]; autoplay?: number }> = ({
 
   useEffect(() => {
     autoplay && setTimeout(handleRightButton, autoplay);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [counter, autoplay]);
 
   if (images.length === 0)
     return <Skeleton variant="rectangular" sx={{ height: '15em' }} />;
   return (
-    <Container
-      sx={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        background: `no-repeat center/contain url(${images[counter]})`,
-        // transition: Autoplay ? 'ease-in-out 2s' : '',
-      }}
-    >
-      {images.length > 1 && (
-        <IconButton onClick={handleLeftButton}>
-          <ArrowBack />
-        </IconButton>
-      )}
+    <>
+      <Container
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          height: '10em',
+          background: `no-repeat center/contain url(${images[counter]})`,
+        }}
+      >
+        {images.length > 1 && (
+          <>
+            <IconButton onClick={handleLeftButton}>
+              <ArrowBack />
+            </IconButton>
+
+            <IconButton onClick={handleRightButton}>
+              <ArrowForward />
+            </IconButton>
+          </>
+        )}
+      </Container>
       <Box
         sx={{
-          height: '20em',
-          width: '20em',
           display: 'flex',
           alignItems: 'flex-end',
           justifyContent: 'center',
@@ -65,12 +70,7 @@ const Slideshow: React.FC<{ images: string[]; autoplay?: number }> = ({
             ))
           : null}
       </Box>
-      {images.length > 1 && (
-        <IconButton onClick={handleRightButton}>
-          <ArrowForward />
-        </IconButton>
-      )}
-    </Container>
+    </>
   );
 };
 

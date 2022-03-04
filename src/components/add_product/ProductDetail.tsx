@@ -9,11 +9,11 @@ import {
   CardActions,
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { IProduct } from '../../types';
+import { INewProduct, IProduct } from '../../types';
 
 const ProductDetail: React.FC<{
-  product: IProduct<File>;
-  setProduct: React.Dispatch<React.SetStateAction<IProduct<File>>>;
+  product: INewProduct;
+  setProduct: React.Dispatch<React.SetStateAction<INewProduct>>;
   setActiveStep: React.Dispatch<React.SetStateAction<number>>;
 }> = ({ product, setProduct, setActiveStep }) => {
   const [disabledNext, setDisabledNext] = useState(true);

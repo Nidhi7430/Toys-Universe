@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Product from '../../../pages/Product';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ProductRoute: React.FC<any> = ({ component: Component, ...rest }) => {
   return (
     <Route

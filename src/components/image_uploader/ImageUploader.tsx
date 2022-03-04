@@ -1,7 +1,7 @@
 import { Cancel } from '@mui/icons-material';
 import { Stack, Button, Typography, Alert } from '@mui/material';
 import React, { useRef, useState } from 'react';
-import { Input } from '../custom_styled_components/Input';
+import { Input } from '../../custom_styled_components/Input';
 
 const ImageUploader: React.FC<{
   limit: number;

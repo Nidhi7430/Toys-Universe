@@ -1,14 +1,13 @@
 import { Grid, Skeleton } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { fetchProducts, Product } from '../services/product';
+import { IProduct } from '../types';
 import ProductCard from './ProductCard';
 
-const ProductGrid: React.FC<{ count: number }> = ({ count }) => {
-  const [data, setData] = useState<Product[]>([]);
+const ProductGrid: React.FC<{ count: number }> = () => {
+  const [data, setData] = useState<IProduct[]>([]);
 
   const getData = async () => {
-    const data = await fetchProducts(count);
-    setData(data);
+    // setData(data);
   };
   useEffect(() => {
     getData();
@@ -21,7 +20,7 @@ const ProductGrid: React.FC<{ count: number }> = ({ count }) => {
           <Skeleton variant="rectangular" height={100} />
         ) : (
           data.map((item, index) => (
-            <Grid key={index} item xs={12} sm={4} md={4} lg={3}>
+            <Grid key={index} item xs={6} sm={6} md={4} lg={3}>
               <ProductCard product={item} />
             </Grid>
           ))

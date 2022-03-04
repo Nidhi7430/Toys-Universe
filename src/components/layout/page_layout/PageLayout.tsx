@@ -4,7 +4,7 @@ import React from 'react';
 const PageLayout: React.FC = ({ children }) => {
   return (
     <Container
-      maxWidth={false}
+      disableGutters
       sx={{
         // bgcolor: 'primary.light',
         display: 'block',

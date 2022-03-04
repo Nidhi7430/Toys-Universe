@@ -14,6 +14,7 @@ import PrivateRoute from './components/layout/custom_routes/PrivateRoute';
 import ProductRoute from './components/layout/custom_routes/ProductRoute';
 import PageLayout from './components/layout/page_layout/PageLayout';
 import SignUp from './pages/SignUp';
+import { CartProvider } from './context/CartContext';
 
 // TODO theme pallete
 const theme = createTheme({
@@ -41,19 +42,21 @@ const App: React.FC = () => {
     <>
       <ThemeProvider theme={theme}>
         <AuthProvider>
-          {/* <NavBar /> */}
-          <Navbar />
-          <PageLayout>
-            <Switch>
-              {/* TODO Product Detail Page */}
-              <ProductRoute path="/product/:id" component={Product} />
-              <PrivateRoute path="/admin" component={Admin}></PrivateRoute>
-              <Route path="/register" component={SignUp}></Route>
-              <Route path="/profile" component={Profile}></Route>
-              <Route path="/" component={Home}></Route>
-            </Switch>
-          </PageLayout>
-          <Footer />
+          <CartProvider>
+            {/* <NavBar /> */}
+            <Navbar />
+            <PageLayout>
+              <Switch>
+                {/* TODO Product Detail Page */}
+                <ProductRoute path="/product/:id" component={Product} />
+                <PrivateRoute path="/admin" component={Admin}></PrivateRoute>
+                <Route path="/register" component={SignUp}></Route>
+                <Route path="/profile" component={Profile}></Route>
+                <Route path="/" component={Home}></Route>
+              </Switch>
+            </PageLayout>
+            <Footer />
+          </CartProvider>
         </AuthProvider>
       </ThemeProvider>
     </>

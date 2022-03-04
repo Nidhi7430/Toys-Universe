@@ -7,12 +7,11 @@ import {
   Typography,
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { Product } from '../../services/product';
-import { IProduct } from '../../types';
+import { INewProduct } from '../../types';
 import Slideshow from '../Slideshow';
 
 const PreviewProduct: React.FC<{
-  product: IProduct<File | string>;
+  product: INewProduct;
   setActiveStep: React.Dispatch<React.SetStateAction<number>>;
 }> = ({ product, setActiveStep }) => {
   const [loading, setLoading] = useState(false);
@@ -22,9 +21,7 @@ const PreviewProduct: React.FC<{
     // show loading icon
     setLoading(true);
     // set Product
-    const productInstance = new Product(product);
     // start uploading data to cloud
-    await productInstance.add();
     // hide loading icon
     setLoading(false);
     // move to next step

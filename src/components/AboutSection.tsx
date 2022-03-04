@@ -14,7 +14,7 @@ const AboutSection: React.FC = () => {
           },
         }}
       >
-        Universe is India's finest and most trusted Educational toys
+        Universe is India&aposs finest and most trusted Educational toys
         manufacturer. Our main focus is to engage kids in learning something new
         with our products. Educational toys can help kids boost their IQ,
         Enhances the development of their senses & Improved Concentration. Kids
@@ -24,8 +24,8 @@ const AboutSection: React.FC = () => {
         We are always looking for new innovations in our products which can
         satisfy parents as well as kids. We are continually adding new
         innovative products in our portfolio and growing. We always look for
-        customers' feedback so that we can improve our products that can satisfy
-        the needs of parents for their kids.
+        customers&apos feedback so that we can improve our products that can
+        satisfy the needs of parents for their kids.
       </Typography>
     </>
   );
