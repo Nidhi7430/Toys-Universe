@@ -9,7 +9,7 @@ export interface IBaseProduct<T> {
 
 // Product from Firestore
 export interface IProduct extends IBaseProduct<string> {
-  uid: string;
+  id: string;
 }
 
 // New Product

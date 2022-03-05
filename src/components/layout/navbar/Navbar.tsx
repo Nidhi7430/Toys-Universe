@@ -2,22 +2,17 @@ import React, { useState } from 'react';
 import {
   AccountCircle,
   ExitToApp,
-  Inbox,
-  Mail,
   Menu,
   ShoppingBasket,
 } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
-import logo from '../../../assets/logo.png';
 
 import {
   AppBar,
   Box,
-  Button,
   Divider,
   Drawer,
   IconButton,
-  Link,
   List,
   ListItem,
   ListItemIcon,
@@ -31,8 +26,7 @@ import { useAuth } from '../../../context/AuthContext';
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
 
-  const { user, handleSignOut } = useAuth();
-
+  const { user } = useAuth();
   return (
     <>
       <AppBar sx={{ bgcolor: 'primary.main' }}>
@@ -45,7 +39,7 @@ const Navbar: React.FC = () => {
           </IconButton>
           <Typography sx={{ flexGrow: 1 }}>{TITLE}</Typography>
           <div>
-            {user && (
+            {user ? (
               <IconButton
                 component={RouterLink}
                 to="/profile"
@@ -53,7 +47,7 @@ const Navbar: React.FC = () => {
               >
                 <ShoppingBasket />
               </IconButton>
-            )}
+            ) : null}
             <IconButton
               component={RouterLink}
               to="/profile"
@@ -84,7 +78,7 @@ const Navbar: React.FC = () => {
               </ListItem>
             ))}
             <Divider />
-            <ListItem sx={{ color: 'secondary.main' }} onClick={handleSignOut}>
+            <ListItem sx={{ color: 'secondary.main' }}>
               <ListItemIcon sx={{ color: 'secondary.main' }}>
                 <ExitToApp />
               </ListItemIcon>
